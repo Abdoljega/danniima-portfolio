@@ -1,5 +1,5 @@
 // import ScrollReveal from '../lib/scrollreveal-master/dist/scrollreveal.min'
-let menus = document.querySelectorAll('.menu')
+let menusite = document.querySelector('.menu-site')
 
 
 console.log(ScrollReveal)
@@ -10,12 +10,18 @@ const sr = ScrollReveal({
     reset: true
 })
 
-sr.reveal('.nav_menu', {interval : 200})
+console.log(window.innerWidth)
+if(window.innerWidth > '780'){
+    sr.reveal('.nav_menu', {interval : 200})
+    
+    sr.reveal('.imgProfile', {delay : 200})
+    
+}
 sr.reveal('#nav_welcome', {delay : 1000})
-sr.reveal('.imgProfile', {delay : 200})
 sr.reveal('#nav_name', {delay : 700})
 sr.reveal('.summery', {delay : 400})
 sr.reveal('.downloadCv', {delay : 200})
+console.log(menusite)
 // sr.reveal('.about-profile', {delay : 200})
 // sr.reveal('.projectInformation', {interval : 400})
 
@@ -95,3 +101,20 @@ skills.forEach(skill=>{
 observer.observe(aboutProfile)
 observer.observe(aboutLeft)
 observer.observe(aboutRight)
+
+
+
+
+
+
+let toggle = document.querySelector('.toggle')
+let nav_menu = document.querySelectorAll('.nav_menu')
+let toggleCon = document.querySelector('.toggle-container')
+
+toggleCon.addEventListener('click', e=>{
+    toggle.classList.toggle('active')
+    menusite.classList.toggle('active')
+    nav_menu.forEach(nav=>{
+        nav.classList.toggle('show')
+    })
+})
