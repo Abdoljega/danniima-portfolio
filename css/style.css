@@ -676,7 +676,7 @@ main .menu .toggle{
 
     .info .info-discription{
         width: 90%;
-        height: 170px;
+        height: auto;
         /* background-color: red; */
         margin: auto;
     }
@@ -690,8 +690,6 @@ main .menu .toggle{
 
     .info .info-links{
         width: fit-content;
-        /* height: 50px; */
-        /* background-color: cadetblue; */
         display: flex;
         margin: auto;
 
@@ -1763,6 +1761,7 @@ footer .socialFooter{
         z-index: 2;
         background-color: #fafafa;
         display: flex;
+        order: 2;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -1772,6 +1771,7 @@ footer .socialFooter{
     .about-container .about-image-side{
         width: 80%;
         height: 80%;
+        order: 1;
         /* background-color: brown; */
         display: flex;
         justify-content: center;
@@ -1844,6 +1844,15 @@ footer .socialFooter{
         /* display: none; */
     }
 
+    .project-header p{
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 4px 20px;
+        font-size: 19px;
+        font-family: fontF;
+    }
+
 
     .section-projects .projects{
         width: 100%;
@@ -1871,14 +1880,16 @@ footer .socialFooter{
 
     .projects .projectImage{
         height: 400px;
+        order: 1;
         /* background-color: blue; */
     }
     .projectInformation{
-        height: 300px;
+        height: auto;
+        order: 2;
     }
     .projectInformation .info{
-        width: 80%;
-        height: 100%;
+        width: 100%;
+        height: fit-content;
         /* position: absolute;
         top: 50%;
         left: 50%;
@@ -1896,19 +1907,45 @@ footer .socialFooter{
 
         .info-header h3{
             padding: 12px 0px;
-            font-size: 30px;
+            font-size: 23px;
             font-family: welcome;
             color: blueviolet;
         }
     }
+
+    .info .info-discription{
+        width: 90%;
+        height: fit-content;
+        /* background-color: red; */
+        margin: auto;
+    }
+    .info-discription p{
+        font-size: 17px;
+        font-family: welcome;
+        padding: 0 5px;
+        text-align: center;
+        height: auto;
+    }
+
     .projects .projectImage .destop-image-container{
-        width: 70%;
+        width: 80%;
         height: auto;
         /* background-color: rgb(49, 25, 25); */
         position: absolute;
         padding: 0;
         margin: 0;
         
+    }
+
+    .destop-image-container .destop{
+        width: 100%;
+        height: fit-content;
+        /* background-color: coral; */
+        border: 2px solid white;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        margin: 0;
+        padding: 0;
     }
 
     .destop-image-container .phone{
