@@ -9,6 +9,10 @@
     --headingSize : 35px;
     
 }
+
+:root{
+    --headfontsize : 28px;
+}
 @font-face {
     font-family: fontF;
     src: url(../font/roboto/Roboto-Regular.ttf);
@@ -1167,6 +1171,7 @@ main .menu .toggle{
     /* color: rgb(97, 97, 97); */
 }
 
+
 .form-site form .sbm{
     width: 100%;
     height: 50px;
@@ -1178,6 +1183,26 @@ main .menu .toggle{
     border-radius: 5px;
     background-color: blueviolet;
     color: white;
+}
+.form-site form textarea, .form-site form input{
+    opacity: 0;
+    transform: translateY(-80px);
+    visibility: hidden;
+}
+.form-site form textarea.active, .form-site form input.active{
+    opacity: 1;
+    transform: translateY(0px);
+    visibility: visible;
+    transition: 0.8s;
+}
+
+@keyframes formAnimation {
+    0%{
+       
+    }
+    100%{
+        
+    }
 }
 
 .leftSocial{
@@ -1398,7 +1423,7 @@ footer .socialFooter{
 @media screen and (max-width : 780px){
     main{
         width: 100%;
-        height: 100vh;
+        height: 100%;
         position: fixed;
     }
 
@@ -1736,13 +1761,35 @@ footer .socialFooter{
         /* display: none; */
         z-index: 0;
     }
-
+    .section-about h2{
+        width: fit-content;
+        font-size: var(--headfontsize);
+        font-family: poppins;
+        padding: 15px;
+        text-align: center;
+        position: relative;
+        margin: auto;
+    
+        
+    }
+    
+    .section-about h2::after{
+        content: '';
+        width: 30%;
+        height: 8px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0px;
+        background-color: var(--primary);
+        border-radius: 7px;
+    }
 
     .section-about .about-container{
         width: 100%;
         height: 100%;
         margin: auto;
-        margin-top: 0px;
+        margin-top: 20px;
         /* background-color: rgb(58, 32, 32); */
         position: static;
         display: flex;
@@ -1808,6 +1855,9 @@ footer .socialFooter{
         position: static;
     }
 
+    .skills-header h3{
+        font-size:var(--headfontsize);
+    }
     .skills-container .skills-list{
         width: 90%;
         min-height: 100%;
@@ -1824,9 +1874,44 @@ footer .socialFooter{
         height: 300px;
     }
 
+    .skills-list .skill.active{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        transition: 0.6s ease-in;
+        transition-delay: 200ms;
+    }
 
-
-
+    .skills-list .skill:nth-child(1).active{
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 200ms;
+    }
+    .skills-list .skill:nth-child(2).active{
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 200ms;
+    }
+    .skills-list .skill:nth-child(3).active{
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 200ms;
+    }
+    .skills-list .skill:nth-child(4).active{
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 200ms;
+    }
+    .skills-list .skill:nth-child(5).active{
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 200ms;
+    }
+    .skills-list .skill:nth-child(6).active{
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 200ms;
+    }
 
 
 
@@ -1844,11 +1929,15 @@ footer .socialFooter{
         /* display: none; */
     }
 
+    .project-header h3{
+        font-size: var(--headfontsize);
+    }
+
     .project-header p{
         width: 100%;
         text-align: center;
         margin: 0 auto;
-        padding: 4px 20px;
+        padding: 4px 15px;
         font-size: 19px;
         font-family: fontF;
     }
@@ -1890,11 +1979,6 @@ footer .socialFooter{
     .projectInformation .info{
         width: 100%;
         height: fit-content;
-        /* position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); */
-        /* background-color: brown; */
 
         .info-header{
             width: fit-content;
@@ -1965,10 +2049,17 @@ footer .socialFooter{
 
 
 
+    .section-contact .contact-container{
+        width: 90%;
+    }
 
+    .contact-header h2{
+        font-size: var(--headfontsize);
+    }
 
-
-
+    .form-site form{
+        width: 100%;
+    }
 
     .contact-container .social{
         display: none;

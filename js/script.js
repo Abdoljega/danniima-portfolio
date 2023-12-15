@@ -42,36 +42,40 @@ let container = document.querySelector('.container')
 let social = document.querySelector('.social')
 let aboutRight = document.querySelector('.about-right')
 let aboutLeft = document.querySelector('.about-left')
+let projectImage = document.querySelectorAll('.destop-image-container')
+let projectInformation = document.querySelectorAll('.info')
 let leftSocial = document.querySelector('.socialLeft')
 let aboutProfile = document.querySelector('.about-profile')
+let textarea = document.querySelector('textarea')
 let left_Nav = document.querySelectorAll('.nav_left')
 let right_Nav = document.querySelectorAll('.nav_right')
 let projects = document.querySelectorAll('.projects')
-let skills = document.querySelectorAll('.skill')
+let skills = document.querySelectorAll('.skill, input')
+// let input = document.querySelectorAll('input')
 const { scrollTop } = document.documentElement
 
 height = 0;
-container.addEventListener('scroll', e=>{
-    // console.log(container.scrollTop)
-    // console.log(container.scrollTop)
-    console.log(container.scrollTop)
+// container.addEventListener('scroll', e=>{
+//     // console.log(container.scrollTop)
+//     // console.log(container.scrollTop)
+//     console.log(container.scrollTop)
 
-    // if(container.scrollTop > 1600){
-    //     // console.log(projects)
-    //     projectInformation[0].classList.add('active')
-    //     right_Nav[0].classList.add('active')
-    // }
-    // if(container.scrollTop >= 2300){
-    //     // console.log(projects)
-    //     projectInformation[1].classList.add('active')
-    //     right_Nav[1].classList.add('active')
-    // }
+//     // if(container.scrollTop > 1600){
+//     //     // console.log(projects)
+//     //     projectInformation[0].classList.add('active')
+//     //     right_Nav[0].classList.add('active')
+//     // }
+//     // if(container.scrollTop >= 2300){
+//     //     // console.log(projects)
+//     //     projectInformation[1].classList.add('active')
+//     //     right_Nav[1].classList.add('active')
+//     // }
     
 
         
     
 
-})
+// })
 
 
 let observer = new IntersectionObserver(entreis =>{
@@ -99,6 +103,7 @@ skills.forEach(skill=>{
 })
 
 observer.observe(aboutProfile)
+observer.observe(textarea)
 observer.observe(aboutLeft)
 observer.observe(aboutRight)
 
@@ -117,4 +122,26 @@ toggleCon.addEventListener('click', e=>{
     nav_menu.forEach(nav=>{
         nav.classList.toggle('show')
     })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('click', e=>{
+    console.log(e.target.classList[0])
+    if(e.target.classList[0] != 'toggle' && e.target.classList[0] != 'toggle-container'){
+        menusite.classList.remove('active')
+        toggle.classList.remove('active')
+        nav_menu.forEach(nav=>{
+            nav.classList.remove('show')
+        })
+    }
 })
