@@ -40,8 +40,8 @@ console.log(menusite)
 
 let container = document.querySelector('.container')
 let social = document.querySelector('.social')
-let aboutRight = document.querySelector('.about-right')
-let aboutLeft = document.querySelector('.about-left')
+// let aboutRight = document.querySelector('.about-right')
+let aboutLeft = document.querySelector('.about-text-side')
 let projectImage = document.querySelectorAll('.destop-image-container')
 let projectInformation = document.querySelectorAll('.info')
 let leftSocial = document.querySelector('.socialLeft')
@@ -105,7 +105,7 @@ skills.forEach(skill=>{
 observer.observe(aboutProfile)
 observer.observe(textarea)
 observer.observe(aboutLeft)
-observer.observe(aboutRight)
+// observer.observe(aboutRight)
 
 
 
@@ -113,12 +113,14 @@ observer.observe(aboutRight)
 
 
 let toggle = document.querySelector('.toggle')
+let menuA = document.querySelector('.menu')
 let nav_menu = document.querySelectorAll('.nav_menu')
 let toggleCon = document.querySelector('.toggle-container')
 
 toggleCon.addEventListener('click', e=>{
     toggle.classList.toggle('active')
     menusite.classList.toggle('active')
+    menuA.classList.toggle('active')
     nav_menu.forEach(nav=>{
         nav.classList.toggle('show')
     })
@@ -140,6 +142,7 @@ document.addEventListener('click', e=>{
     if(e.target.classList[0] != 'toggle' && e.target.classList[0] != 'toggle-container'){
         menusite.classList.remove('active')
         toggle.classList.remove('active')
+        menuA.classList.remove('active')
         nav_menu.forEach(nav=>{
             nav.classList.remove('show')
         })
