@@ -762,7 +762,7 @@ ul li .item .icon svg{
         }
 
         & .info-github{
-            width: 100px;
+            width: 120px;
             height: 35px;
             background-color: rgb(70, 12, 12);
             border-radius: 5px;
@@ -771,16 +771,26 @@ ul li .item .icon svg{
             justify-content: space-around;
             align-items: center;
 
-            & img{
-                width: 30px;
-                margin-left: 7px;
+            & a{
+                width: 120px;
+                display: flex;
+                /* justify-content: space-around; */
+                align-items: center;
+
+                & img{
+                    width: 30px;
+                    margin-left: 7px;
+                }
+                & p{
+                    color: white;
+                    padding: 0;
+                    padding-right: 10px;
+                    font-family: welcome;
+                    background-color: transparent;
+                    /* padding: 7px 20px; */
+                }
             }
-            & p{
-                color: white;
-                padding-right: 10px;
-                font-family: welcome;
-                /* padding: 7px 20px; */
-            }
+            
         }
     }
 
