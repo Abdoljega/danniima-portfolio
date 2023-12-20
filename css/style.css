@@ -9,10 +9,10 @@
     --background : #fafafa;
     --inputColr : rgb(255, 255, 255);
     --surface : rgb(95, 20, 20);
-
     --width : 2px;
     --duration : 0.5s;
     --headingSize : 35px;
+    --toggle: #000;
 }
 
 .dark-mode{
@@ -100,7 +100,7 @@ main .animation-container{
     }
 }
 
-main .containers{
+main .container{
     width: 100%;
     height: calc(100% - 60px);
     /* margin-top: 60px; */
@@ -191,7 +191,7 @@ main .menu .toggle{
 
 /* wrapper */
 
-.containers .wrapper{
+.container .wrapper{
     width: 100%;
     height: calc(100vh - 60px);
     margin: auto;
@@ -384,11 +384,11 @@ main .menu .toggle{
 
 /* ABOUT */
 
-.containers .section-about{
-    width: 100vw;
+.container .section-about{
+    width: 100%;
     min-height: 100vh;
     background-color: var(--background);
-
+    /* background-color: red; */
     /* display: flex;
     justify-content: center;
     align-items: center; */
@@ -624,7 +624,7 @@ ul li .item .icon svg.date path{
 
 /* PROJECTS */
 
-.containers .section-projects{
+.container .section-projects{
     width: 100vw;
     min-height: 100vh;
     background-color: var(--background);
@@ -928,7 +928,7 @@ ul li .item .icon svg.date path{
 
 /* SKILLS */
 
-.containers .section-skills{
+.container .section-skills{
     width: 100%;
     min-height: 100vh;
     height: auto;
@@ -1213,7 +1213,7 @@ ul li .item .icon svg.date path{
 
 /* wrapper-contact */
 
-.containers .section-contact{
+.container .section-contact{
     width: 100%;
     min-height: 100vh;
     /* display: flex; */
@@ -1818,10 +1818,10 @@ footer .socialFooter{
     }
 
 
-    main .containers{
+    main .container{
         width: 100%;
     }
-    .containers .wrapper{
+    .container .wrapper{
         width: 100%;
         height: calc(100vh - 60px);
         margin: auto;
@@ -1950,7 +1950,7 @@ footer .socialFooter{
 
 
 
-    .containers .section-about{
+    .container .section-about{
         width: 100%;
         min-height: auto;
         height: auto;
@@ -2041,7 +2041,7 @@ footer .socialFooter{
 
     /* Skills */
 
-    .containers .section-skills{
+    .container .section-skills{
         width: 100%;
         min-height: 100%;
         /* height: auto; */
@@ -2131,7 +2131,7 @@ footer .socialFooter{
 
 
 
-    .containers .section-projects{
+    .container .section-projects{
         width: 100vw;
         min-height: 100vh;
         /* background-color: rgb(33, 48, 58); */
