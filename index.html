@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/css/style.css">
+    <link rel="stylesheet" href="css/css/demo.css">
+      <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'> -->
     <link rel="stylesheet" href="./css/animation.css">
+    <link rel="stylesheet" href="./css/dist/css/bootstrap-grid.min.css">
     <script src="./lib/scrollreveal-master/dist/scrollreveal.min.js"></script>
     <script src="./lib/lax.js-dev/lib/lax.min.js"></script>
+    
     <title>Porfolio</title>
 </head>
-<body>
+<body >
     <main>
         <div class="animation-container">
         </div>
@@ -48,23 +53,35 @@
                         <p>Contact</p>
                     </a>
                 </div>
+
+                <div class="nav_menu modeContainer">
+                    <div class="mode-text">
+                        <p>Mode</p>
+                        <div class="col-sm-5">
+                            <button type="button" class="btn btn-xs btn-toggle " id="modes" data-toggle="button" aria-pressed="false" autocomplete="off">
+                              <div class="handle"></div>
+                            </button>
+                          </div>
+                    </div>
+                    <svg id="mode" height="25" viewBox="0 0 8 8" width="25"  xmlns="http://www.w3.org/2000/svg"><path d="m4 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm-2.5 1c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm-2.5 1c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-3.5 1.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm7 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm-6 2.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm-2.5 1c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5z" fill="#fff"/></svg>
+                </div>
             </div>
         </div>
-        <div class="container">
+        <div class="containers">
             
             <div class="wrapper section" id="home">
                 <div class="profile-site">
                     <div class="profile-img">
                         <div class="imgProfile">
-                            <img src="./images/pngaaa.com-1056316.png" alt="">
+                            <img src="./images/IMG-20230130-WA0084~2.jpg" alt="">
                         </div>
                         
                     </div>
                     <div class="hiContainer">
                             <div class="greeting">
                                 <p id="nav_welcome">Welcom to my portfolio</p>
-                                <h1 id="nav_name">Hi, my name's <br> <big>Abdulrahman</big>.</h1>
-                                <p class="summery">I'm a FullStack Developer</p>
+                                <h1 id="nav_name">Hi There! I'm <br> <big>FullStack Developer</big>.</h1>
+                                <p class="summery">With many years of Experience</p>
                                 <!-- <p class="summery">I'm a web developer from Nigeria. I have many year's exprience in web developing. </p> -->
                                 <div class="downloads">
                                     <div class="downloadCv">
@@ -111,11 +128,11 @@
                                 <li>
                                     <div class="item">
                                         <div class="icon">
-                                            <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20 10V7C20 5.89543 19.1046 5 18 5H6C4.89543 5 4 5.89543 4 7V10M20 10V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19V10M20 10H4M8 3V7M16 3V7" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
-                                                <rect x="6" y="12" width="3" height="3" rx="0.5" fill="#000000"/>
-                                                <rect x="10.5" y="12" width="3" height="3" rx="0.5" fill="#000000"/>
-                                                <rect x="15" y="12" width="3" height="3" rx="0.5" fill="#000000"/>
+                                            <svg width="800px" height="800px" class="date" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20 10V7C20 5.89543 19.1046 5 18 5H6C4.89543 5 4 5.89543 4 7V10M20 10V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19V10M20 10H4M8 3V7M16 3V7" stroke="#" stroke-width="2" stroke-linecap="round"/>
+                                                <rect x="6" y="12" width="3" height="3" rx="0.5" fill="#ffff"/>
+                                                <rect x="10.5" y="12" width="3" height="3" rx="0.5" fill="#000"/>
+                                                <rect x="15" y="12" width="3" height="3" rx="0.5" fill=""/>
                                                 </svg>   
                                         </div>
                                         <div class="details-name">
@@ -178,7 +195,7 @@
                                     <div class="item">
                                         <div class="icon">
                                             <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.75 5.25L3 6V18L3.75 18.75H20.25L21 18V6L20.25 5.25H3.75ZM4.5 7.6955V17.25H19.5V7.69525L11.9999 14.5136L4.5 7.6955ZM18.3099 6.75H5.68986L11.9999 12.4864L18.3099 6.75Z" fill="#000"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.75 5.25L3 6V18L3.75 18.75H20.25L21 18V6L20.25 5.25H3.75ZM4.5 7.6955V17.25H19.5V7.69525L11.9999 14.5136L4.5 7.6955ZM18.3099 6.75H5.68986L11.9999 12.4864L18.3099 6.75Z" fill=""/>
                                                 </svg>   
                                         </div>
                                         <div class="details-name">
@@ -192,7 +209,7 @@
                                             <svg width="800px" height="800px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                                 <g id="icomoon-ignore">
                                                 </g>
-                                                <path d="M16.001 1.072c5.291 0 9.596 4.305 9.596 9.597 0 1.683-0.446 3.341-1.29 4.799l-8.307 14.394-8.308-14.395c-0.843-1.456-1.289-3.115-1.289-4.798 0-5.292 4.305-9.597 9.597-9.597zM16.001 14.4c2.058 0 3.731-1.674 3.731-3.731s-1.674-3.731-3.731-3.731c-2.058 0-3.732 1.674-3.732 3.731s1.674 3.731 3.732 3.731zM16.001 0.006c-5.889 0-10.663 4.775-10.663 10.663 0 1.945 0.523 3.762 1.432 5.332l9.23 15.994 9.23-15.994c0.909-1.57 1.432-3.387 1.432-5.332 0-5.888-4.774-10.663-10.662-10.663v0zM16.001 13.334c-1.472 0-2.666-1.193-2.666-2.665 0-1.471 1.194-2.665 2.666-2.665s2.665 1.194 2.665 2.665c0 1.472-1.193 2.665-2.665 2.665v0z" fill="#000000">
+                                                <path d="M16.001 1.072c5.291 0 9.596 4.305 9.596 9.597 0 1.683-0.446 3.341-1.29 4.799l-8.307 14.394-8.308-14.395c-0.843-1.456-1.289-3.115-1.289-4.798 0-5.292 4.305-9.597 9.597-9.597zM16.001 14.4c2.058 0 3.731-1.674 3.731-3.731s-1.674-3.731-3.731-3.731c-2.058 0-3.732 1.674-3.732 3.731s1.674 3.731 3.732 3.731zM16.001 0.006c-5.889 0-10.663 4.775-10.663 10.663 0 1.945 0.523 3.762 1.432 5.332l9.23 15.994 9.23-15.994c0.909-1.57 1.432-3.387 1.432-5.332 0-5.888-4.774-10.663-10.662-10.663v0zM16.001 13.334c-1.472 0-2.666-1.193-2.666-2.665 0-1.471 1.194-2.665 2.666-2.665s2.665 1.194 2.665 2.665c0 1.472-1.193 2.665-2.665 2.665v0z" fill="">
                                                 
                                                 </path>
                                                 </svg> 
@@ -230,7 +247,7 @@
 
                     
                     <div class="skills-header">
-                        <h3>Skills</h3>
+                        <h2>Skills</h2>
                     </div>
                     <div class="skills-list">
                         <div class="skill">
@@ -329,7 +346,7 @@
             </div>
             <div class="section-projects section" id="project">
                 <div class="project-header">
-                    <h3>Projects</h3>
+                    <h2>Projects</h2>
                     <p>Here are a few past design projects I've worked on.</p>
                 </div>
                 <div class="projects">
@@ -415,7 +432,7 @@
                 <div class="contact-container">
                     
                     <div class="form-site">
-                        <form action="">
+                        <form action="" method="post"  reset(); return false>
                             <div class="field">
                                 <!-- <label for="fullname">Full Name</label> -->
                                 <input type="text" id="fullname" placeholder="Full Name">
@@ -527,6 +544,7 @@
         </div>
 
     </main>
-    <script  src="./js/script.js"></script>
+    <script type="module" src="./js/script.js"></script>
+    <script src="./js/smtp.js"></script>
 </body>
 </html>

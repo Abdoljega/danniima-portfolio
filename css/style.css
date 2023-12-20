@@ -2,12 +2,28 @@
 
 
 :root{
+    --primaryColor : #ffffff;
     --primary : #268dee;
+    --secondryColor : rgb(105, 105, 105);
     --headerColor : rgb(88, 74, 74);
+    --background : #fafafa;
+    --inputColr : rgb(255, 255, 255);
+    --surface : rgb(95, 20, 20);
+
     --width : 2px;
     --duration : 0.5s;
     --headingSize : 35px;
-    
+}
+
+.dark-mode{
+    --primaryColor : #000106;
+    --primary : #268dee;
+    --secondryColor : rgb(226, 218, 218);
+    --headerColor : rgb(236, 236, 236);
+    --background : #101011;
+    --inputColr : rgb(39, 39, 39);
+    --surface : #1d1111;
+    --toggle : white;
 }
 
 :root{
@@ -54,6 +70,7 @@ main{
     height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: var(--primaryColor);
 }
 
 main .animation-container{
@@ -83,7 +100,7 @@ main .animation-container{
     }
 }
 
-main .container{
+main .containers{
     width: 100%;
     height: calc(100% - 60px);
     /* margin-top: 60px; */
@@ -102,7 +119,7 @@ main .menu{
     display: flex;
     justify-content: space-between;
     /* position: fixed; */
-    background-color: white;
+    background-color: var(--primaryColor);
     z-index: 20;
     /* background-color: brown; */
 }
@@ -122,14 +139,16 @@ main .menu .toggle{
 
 .menu-logo-site img{
     height: 50px;
+    /* box-shadow: 0px 0px 3px 5px rgba(255, 255, 255, 0.26); */
 }
 
 .menu .menu-site{
-    width: 50%;
+    width: 600px;
     height: 100%;
     /* background-color: burlywood; */
     display: flex;
     position: static;
+    margin-right: 7%;
 }
 
 .menu .menu-site .nav_menu{
@@ -144,8 +163,9 @@ main .menu .toggle{
 
 .menu-site .nav_menu p{
     text-align: center;
-    color: rgb(36, 36, 36);
+    color: var(--secondryColor);
     font-size: 16px;
+    float: left;
     font-family: fontF;
     cursor: pointer;
     padding: 7px 0;
@@ -160,18 +180,23 @@ main .menu .toggle{
     border-bottom: 2px solid var(--primary);
 }
 
+.menu-site .nav_menu svg{
+    display: block;
+}
 
-
+.nav_menu.modeContainer .mode-text{
+    display: none;
+}
 
 
 /* wrapper */
 
-.container .wrapper{
-    width: 90%;
+.containers .wrapper{
+    width: 100%;
     height: calc(100vh - 60px);
     margin: auto;
     position: relative;
-    
+    background-color: var(--background);
     /* display: none; */
     /* background-color: red; */
 }
@@ -185,23 +210,26 @@ main .menu .toggle{
 }
 
 .profile-site .profile-img{
-    width: 300px;
+    width: 350px;
     height: 100%;
+
     /* background-color: chocolate; */
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     
+    
 }
 
 .profile-img .imgProfile{
-    width: 270px;
-    height: 260px;
+    width: 300px;
+    height: 420px;
     visibility: hidden;
     display: block;
-    background-color: rgb(238, 244, 247);
-    margin-top: 50px;
+    background-color: var(--surface);
+    margin-top: 0px;
+    border-radius: 5px;
     /* border-top-left-radius: 50%;
     border-top-right-radius: 50%; */
     /* border-radius: 110px; */
@@ -211,13 +239,14 @@ main .menu .toggle{
 }
 
 .profile-img .imgProfile img{
-    width: auto;
-    height: 400px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    border-radius: 5px;
     /* border-radius: 110px; */
     /* border: 5px solid white; */
 }
@@ -276,7 +305,7 @@ main .menu .toggle{
 .greeting h1{
     font-size: 50px;
     font-family: headName;
-    color: rgb(20, 20, 20);
+    color: var(--secondryColor);
     visibility: hidden;
 }
 
@@ -288,7 +317,7 @@ main .menu .toggle{
 .greeting .summery{
     font-size: 15px;
     width: 270px;
-    color: black;
+    color: var(--secondryColor);
     visibility: hidden;
 }
 
@@ -355,10 +384,10 @@ main .menu .toggle{
 
 /* ABOUT */
 
-.container .section-about{
+.containers .section-about{
     width: 100vw;
     min-height: 100vh;
-    background-color: #fafafa;
+    background-color: var(--background);
 
     /* display: flex;
     justify-content: center;
@@ -376,7 +405,7 @@ main .menu .toggle{
     text-align: center;
     position: relative;
     margin: auto;
-
+    color: var(--headerColor);
     
 }
 
@@ -411,9 +440,9 @@ main .menu .toggle{
     flex: 1;
     height: 100%;
     padding-right: 40px;
-    color: rgb(105, 105, 105);
+    color: var(--secondryColor);
     z-index: 2;
-    background-color: #fafafa;
+    /* background-color: #fafafa; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -489,13 +518,26 @@ ul li .item .icon{
 
 ul li .item .icon svg{
     width: 20px;
+    fill: var(--headerColor);
+}
+
+/* ul li .item .icon svg.date{
+    fill: rgb(255, 255, 255);
+} */
+
+ul li .item .icon svg.date rect{
+    fill: var(--secondryColor);
+}
+ul li .item .icon svg.date path{
+    fill: transparent;
+    stroke: var(--secondryColor);
 }
 
 .about-left ul li .item .details-name p{
     font-size: 17px;
     font-family: headName;
     line-height: 30px;
-
+    color: var(--secondryColor);
     /* margin-bottom: 40px; */
 }
 
@@ -582,10 +624,10 @@ ul li .item .icon svg{
 
 /* PROJECTS */
 
-.container .section-projects{
+.containers .section-projects{
     width: 100vw;
     min-height: 100vh;
-    background-color: rgb(226, 239, 247);
+    background-color: var(--background);
     /* display: none; */
 }
 
@@ -609,13 +651,14 @@ ul li .item .icon svg{
     }
 }
 
-.project-header h3{
+.project-header h2{
 
     font-size: var(--headingSize);
     font-family: poppins;
     padding: 7px 0;
     margin: 0;
     text-align: center;
+    color: var(--headerColor);
 
     
 }
@@ -627,6 +670,7 @@ ul li .item .icon svg{
     padding: 4px 20px;
     font-size: 19px;
     font-family: fontF;
+    color: var(--secondryColor);
 }
 
 .section-projects .projects{
@@ -737,6 +781,7 @@ ul li .item .icon svg{
         font-family: welcome;
         padding: 10px 5px;
         text-align: center;
+        color: var(--secondryColor);
     }
     
 
@@ -883,11 +928,11 @@ ul li .item .icon svg{
 
 /* SKILLS */
 
-.container .section-skills{
+.containers .section-skills{
     width: 100%;
     min-height: 100vh;
     height: auto;
-    background-color: #f0eded;
+    background-color: var(--background);
     position: relative;
     display: flex;
     justify-content: center;
@@ -928,10 +973,11 @@ ul li .item .icon svg{
 
 }
 
-.skills-header h3{
+.skills-header h2{
     font-size:var(--headingSize);
     text-align: center;
     font-family: poppins;
+    color: var(--headerColor);
 }
 
 .skills-container .skills-list{
@@ -1167,7 +1213,7 @@ ul li .item .icon svg{
 
 /* wrapper-contact */
 
-.container .section-contact{
+.containers .section-contact{
     width: 100%;
     min-height: 100vh;
     /* display: flex; */
@@ -1175,7 +1221,7 @@ ul li .item .icon svg{
     /* position: relative; */
     /* justify-content: center; */
     /* align-items: center; */
-    background-color: #f5f5f5;
+    background-color: var(--background);
 }
 
 .section-contact .contact-container{
@@ -1213,7 +1259,7 @@ ul li .item .icon svg{
     margin: auto;
     font-size: var(--headingSize);
     font-family: fontF;
-    color: rgb(88, 74, 74);
+    color: var(--headerColor);
 }
 
 .contact-container .form-site{
@@ -1250,7 +1296,8 @@ ul li .item .icon svg{
     margin: 10px 0;
     font-size: 16px;
     border-radius: 7px;
-    background-color: #ffffff;
+    color: white;
+    background-color: var(--inputColr);
     /* color: rgb(189, 187, 187); */
     /* display: none; */
 }
@@ -1265,7 +1312,7 @@ ul li .item .icon svg{
     outline: none;
     border: 0;
     font-size: 16px;
-    background-color: #ffffff;
+    background-color: var(--inputColr)
     /* color: rgb(97, 97, 97); */
 }
 
@@ -1316,7 +1363,7 @@ ul li .item .icon svg{
 .contact-container .social{
     width: 50px;
     height: auto;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--primaryColor);
     position: absolute;
     top: 50%;
     left: 0;
@@ -1334,8 +1381,8 @@ ul li .item .icon svg{
 
 
 .social .socials{
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     margin: 10px auto;
     display: flex;
     /* cursor: pointer; */
@@ -1348,7 +1395,7 @@ ul li .item .icon svg{
     transition: 2s;
 }
 .socials img{
-    width: 35px;
+    width: 30px;
 
 }
 
@@ -1421,14 +1468,14 @@ footer{
     width: 100%;
     height: 100px;
     position: relative;
-    background-color: rgb(252, 247, 247);
+    background-color: var(--primaryColor);
     box-shadow: rgba(0, 0, 0, 0.16) 1px -2px 6px;
 }
 
 footer .copyRight{
     width: 100%;
     height: 40px;
-    background-color: rgb(146, 82, 82);
+    background-color: var(--surface);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1568,7 +1615,7 @@ footer .socialFooter{
         background-color: rgba(0, 0, 0, 0.363);
     }
     main .menu .toggle-container{
-        width: 40px;
+        width: 25px;
         height: 100%;
         margin-right: 20px;
         position: relative;
@@ -1579,70 +1626,77 @@ footer .socialFooter{
     }
 
     main .menu .toggle{
-        width: 80%;
-        height: 4px;
+        width: 100%;
+        height: 5px;
         position: relative;
         display: block;
-        background-color: black;
-
+        background-color: var(--toggle);
+        animation: toggleCenter 1s;
 
         &::after{
             content: '';
             width: 100%;
-            height: 4px;
+            height: 5px;
             position: absolute;
-
             margin-top: -9px;
             transition: 1s;
-            background-color: black;
+            background-color: var(--toggle);
+            animation: toggleAnimation 1s;
         }
 
         &::before{
             content: '';
             width: 100%;
-            height: 4px;
+            height: 5px;
             position: absolute;
 
             margin-top: 9px;
             transition: 1s;
-            background-color: black;
+            background-color: var(--toggle);
+            animation: togglebumAnimation 1s;
         }
     }
 
     main .menu .toggle.active{
-        width: 80%;
+        width: 100%;
         height: 0px;
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: black;
+        background-color: var(--toggle);
+        animation: toggleCenterActive 1s;
 
         &::after{
             content: '';
             width: 33px;
-            height: 4px;
+            height: 5px;
             position: absolute;
             transform: rotate(45deg);
             top: 0%;
             margin: 0;
             transition: 1s;
-            background-color: black;
+            /* background-color: black; */
+            animation: toggleAnimationActive 1s;
         }
 
         &::before{
             content: '';
             width: 33px;
-            height: 4px;
+            height: 5px;
             position: absolute;
             transform: rotate(45deg);
             top: 0;
             margin: 0;
             transform: rotate(-45deg);
             transition: 1s;
-            background-color: black;
+            /* background-color: black; */
+            animation: togglebumAnimationActive 1s;
         }
     }
+
+
+    
 
 
 
@@ -1650,8 +1704,8 @@ footer .socialFooter{
         position: absolute;
         right: 0;
         width: 0px;
-        height: calc(100vh - 59px);
-        background-color: rgb(255, 255, 255);
+        height: calc(100% - 59px);
+        background-color: var(--primaryColor);
         bottom: 0;
         display: flex;
         flex-direction: column;
@@ -1663,12 +1717,13 @@ footer .socialFooter{
         width: 50%;
         transition: 1s;
         position: absolute;
+        margin: 0;
         z-index: 100;
     }
    
 
     main .menu .menu-site .nav_menu{
-        width: 80px;
+        width: 100%;
         height: 60px;
         visibility: hidden;
         margin: 0;
@@ -1680,6 +1735,7 @@ footer .socialFooter{
         opacity: 1;
         visibility: visible;
         transform: translateX(0px);
+        color: var(--secondryColor);
         
     }
 
@@ -1721,17 +1777,38 @@ footer .socialFooter{
     }
 
     .menu-site .nav_menu a{
-        /* width: 50%; */
+        width: 80px;
+        float: left;
         position: static;
         float: left;
         color: white;
     }
 
     .menu-site .nav_menu a p{
-        color: rgb(49, 49, 49);
+        color: var(--secondryColor);
+        float: left;
     }
 
+    .menu-site .nav_menu svg{
+        display: none;
+    }
+
+    .menu-site .nav_menu.modeContainer{
+        width: 100%;
+        /* background-color: red; */
+    }
     
+    .menu-site .nav_menu.modeContainer .mode-text{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 10px;
+    }
+
+    .nav_menu.modeContainer .mode-text p{
+        padding-left: 38px;
+    }
 
 
 
@@ -1741,10 +1818,10 @@ footer .socialFooter{
     }
 
 
-    main .container{
+    main .containers{
         width: 100%;
     }
-    .container .wrapper{
+    .containers .wrapper{
         width: 100%;
         height: calc(100vh - 60px);
         margin: auto;
@@ -1827,21 +1904,21 @@ footer .socialFooter{
         
     }
     .greeting h1{
-        font-size: 30px;
+        font-size: 20px;
         font-family: headName;
-        color: rgb(20, 20, 20);
+        /* color: rgb(20, 20, 20); */
         visibility: hidden;
     }
     
     .greeting h1 big{
-        font-size: 35px;
+        font-size: 25px;
         color: var(--primary);
     }
     
     .greeting .summery{
         font-size: 15px;
         width: 270px;
-        color: black;
+        /* color: black; */
         visibility: hidden;
     }
 
@@ -1873,11 +1950,11 @@ footer .socialFooter{
 
 
 
-    .container .section-about{
+    .containers .section-about{
         width: 100%;
         min-height: auto;
         height: auto;
-        background-color: #fafafa;
+        /* background-color: #fafafa; */
         position: relative;
         padding-bottom: 30px;
         /* display: none; */
@@ -1926,9 +2003,9 @@ footer .socialFooter{
         width: 100%;
         height: 100%;
         padding: 20px;
-        color: rgb(105, 105, 105);
+        /* color: rgb(105, 105, 105); */
         z-index: 2;
-        background-color: #fafafa;
+        /* background-color: #fafafa; */
         display: flex;
         order: 2;
         flex-direction: column;
@@ -1964,11 +2041,11 @@ footer .socialFooter{
 
     /* Skills */
 
-    .container .section-skills{
+    .containers .section-skills{
         width: 100%;
         min-height: 100%;
         /* height: auto; */
-        background-color: #f0eded;
+        /* background-color: #f0eded; */
         position: static;
         /* display: flex;
         justify-content: center;
@@ -1985,7 +2062,7 @@ footer .socialFooter{
         position: static;
     }
 
-    .skills-header h3{
+    .skills-header h2{
         font-size:var(--headfontsize);
     }
     .skills-container .skills-list{
@@ -2054,7 +2131,7 @@ footer .socialFooter{
 
 
 
-    .container .section-projects{
+    .containers .section-projects{
         width: 100vw;
         min-height: 100vh;
         /* background-color: rgb(33, 48, 58); */

@@ -2,7 +2,6 @@
 let menusite = document.querySelector('.menu-site')
 
 
-console.log(ScrollReveal)
 const sr = ScrollReveal({
     origin: 'top',
     distance: '80px',
@@ -10,7 +9,6 @@ const sr = ScrollReveal({
     reset: true
 })
 
-console.log(window.innerWidth)
 if(window.innerWidth > '780'){
     sr.reveal('.nav_menu', {interval : 200})
     
@@ -21,7 +19,6 @@ sr.reveal('#nav_welcome', {delay : 1000})
 sr.reveal('#nav_name', {delay : 700})
 sr.reveal('.summery', {delay : 400})
 sr.reveal('.downloadCv', {delay : 200})
-console.log(menusite)
 // sr.reveal('.about-profile', {delay : 200})
 // sr.reveal('.projectInformation', {interval : 400})
 
@@ -54,7 +51,7 @@ let skills = document.querySelectorAll('.skill, input')
 // let input = document.querySelectorAll('input')
 const { scrollTop } = document.documentElement
 
-height = 0;
+
 // container.addEventListener('scroll', e=>{
 //     // console.log(container.scrollTop)
 //     // console.log(container.scrollTop)
@@ -127,19 +124,67 @@ toggleCon.addEventListener('click', e=>{
 })
 
 
+let fullName = document.querySelector('#fullname')
+let email = document.querySelector('#email')
+let body = document.querySelector('#message')
+
+let form = document.querySelector('form')
+
+form.addEventListener('submit', e=>{
+    e.preventDefault()
+    console.log('Hello')
+    Email.send({
+        SecureToken : "9446752d-01a0-4ff0-8907-5701c5650570",
+        To : 'abdoljega@gmail.com',
+        From : email.value,
+        Subject : fullName.value,
+        Body : body.value
+    }).then(
+      message => alert(message)
+    );
+})
 
 
 
+// 9446752d-01a0-4ff0-8907-5701c5650570
 
 
 
+let mode = document.getElementById('mode')
 
+if(mode){
+    mode.addEventListener('click', e=>{
+
+        console.log(e)
+        document.body.classList.toggle('dark-mode')
+    
+        if(!document.body.classList.contains('dark-mode')){
+            document.cookie = 'mode=; expires=thu, 01 Jan 1970 00:00:00 UTC; path=/;'
+            mode.innerHTML = `<path d="m2.72 0c-1.58.53-2.72 2.02-2.72 3.78 0 2.21 1.79 4 4 4 1.76 0 3.25-1.14 3.78-2.72-.4.13-.83.22-1.28.22-2.21 0-4-1.79-4-4 0-.45.08-.88.22-1.28z " fill="#000"/>`
+        
+        } else {
+            document.cookie = 'mode=dark'
+            mode.innerHTML = `<path d="m4 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm-2.5 1c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm-2.5 1c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-3.5 1.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm7 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm-6 2.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm-2.5 1c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5z" fill="#fff"/>`
+    
+        }
+    
+        
+    })
+}
+
+
+if(document.cookie){
+    document.body.classList.add('dark-mode')
+    mode.innerHTML = `<path d="m4 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm-2.5 1c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm-2.5 1c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-3.5 1.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm7 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm-6 2.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm-2.5 1c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5z" fill="#fff"/>`
+} else {
+    mode.innerHTML = `<path d="m2.72 0c-1.58.53-2.72 2.02-2.72 3.78 0 2.21 1.79 4 4 4 1.76 0 3.25-1.14 3.78-2.72-.4.13-.83.22-1.28.22-2.21 0-4-1.79-4-4 0-.45.08-.88.22-1.28z " fill="#000"/>`
+
+}
 
 
 
 document.addEventListener('click', e=>{
-    console.log(e.target.classList[0])
-    if(e.target.classList[0] != 'toggle' && e.target.classList[0] != 'toggle-container'){
+    if(e.target.classList[0] != 'toggle' && e.target.classList[0] != 'toggle-container' && e.target.classList[0] != 'btn'){
         menusite.classList.remove('active')
         toggle.classList.remove('active')
         menuA.classList.remove('active')

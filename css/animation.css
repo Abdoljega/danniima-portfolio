@@ -1470,3 +1470,124 @@
 .slideOutUp {
     animation-name: slideOutUp
 }
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes toggleAnimationActive {
+    0%{
+        position: absolute;
+        margin-top: -9px;
+        transform: rotate(0deg);
+    }
+
+    30%{
+        margin-top: 0px;
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(45deg);
+    }
+    
+}
+
+@keyframes toggleAnimation {
+    0%{
+        position: absolute;
+        margin-top: 0px;
+        transform: rotate(45deg);
+    }
+
+    30%{
+        margin-top: 0px;
+        transform: rotate(0deg);
+    }
+
+    100%{
+        margin-top: -9px;
+        transform: rotate(0deg);
+    }
+    
+}
+
+@keyframes togglebumAnimationActive {
+    0%{
+        position: absolute;
+        margin-top: 9px;
+        transform: rotate(0deg);
+    }
+
+    30%{
+        margin-top: 0px;
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(-45deg);
+    }
+    
+}
+
+@keyframes togglebumAnimation {
+    0%{
+        position: absolute;
+        margin-top: 0px;
+        transform: rotate(-45deg);
+    }
+
+    30%{
+        margin-top: 0px;
+        transform: rotate(0deg);
+    }
+
+    100%{
+        margin-top: 9px;
+        transform: rotate(0deg);
+    }
+    
+}
+
+@keyframes toggleCenterActive {
+    0%{
+        height: 5px;
+    }
+
+    30%{
+        height: 5px;
+    }
+
+    35%{
+        height: 0px;
+    }
+    100%{
+        height: 0px;
+    }
+    
+}
+
+@keyframes toggleCenter {
+    0%{
+        height: 0px;
+    }
+
+    30%{
+        height: 0px;
+    }
+
+    35%{
+        height: 5px;
+    }
+    100%{
+        height: 5px;
+    }
+    
+}
