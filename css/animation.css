@@ -1485,13 +1485,13 @@
 @keyframes toggleAnimationActive {
     0%{
         position: absolute;
-        margin-top: -9px;
-        transform: rotate(0deg);
+        
+        transform: rotate(0deg) translateY(-9px);
     }
 
     30%{
-        margin-top: 0px;
-        transform: rotate(0deg);
+        
+        transform: rotate(0deg) translateY(0);
     }
 
     100%{
@@ -1503,18 +1503,18 @@
 @keyframes toggleAnimation {
     0%{
         position: absolute;
-        margin-top: 0px;
-        transform: rotate(45deg);
+        
+        transform: rotate(45deg)  translateY(0px);
     }
 
     30%{
-        margin-top: 0px;
-        transform: rotate(0deg);
+        
+        transform: rotate(0deg)  translateY(0px);
     }
 
     100%{
-        margin-top: -9px;
-        transform: rotate(0deg);
+        
+        transform: rotate(0deg)  translateY(-9px);
     }
     
 }

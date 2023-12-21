@@ -1647,7 +1647,7 @@ footer .socialFooter{
             width: 100%;
             height: 5px;
             position: absolute;
-            margin-top: -9px;
+            transform: translateY(-9px);
             transition: 1s;
             background-color: var(--toggle);
             animation: toggleAnimation 1s;
@@ -1678,10 +1678,10 @@ footer .socialFooter{
 
         &::after{
             content: '';
-            width: 33px;
+            width: 100%;
             height: 5px;
             position: absolute;
-            transform: rotate(45deg);
+            transform: rotate(45deg) translateY(0px);
             top: 0%;
             margin: 0;
             transition: 1s;
@@ -1691,7 +1691,7 @@ footer .socialFooter{
 
         &::before{
             content: '';
-            width: 33px;
+            width: 100%;
             height: 5px;
             position: absolute;
             transform: rotate(45deg);
@@ -1774,6 +1774,11 @@ footer .socialFooter{
     .menu-site .nav_menu:nth-child(5).show{
         transition: 1s;
         transition-delay: 400ms;
+    }
+
+    .menu-site .nav_menu:nth-child(6).show{
+        transition: 1s;
+        transition-delay: 500ms;
     }
     @keyframes navAnimation {
         0%{
