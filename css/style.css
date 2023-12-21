@@ -171,6 +171,14 @@ main .menu .toggle{
     padding: 7px 0;
 }
 
+.nav_menu.modeContainer p{
+    display: none;
+}
+
+.nav_menu.modeContainer .pl-0{
+    display: none;
+}
+
 .nav_menu.active p{
     color: var(--primary);
     border-bottom: 2px solid var(--primary);
@@ -443,7 +451,7 @@ main .menu .toggle{
     padding-right: 40px;
     color: var(--secondryColor);
     z-index: 2;
-    /* background-color: #fafafa; */
+    background-color: var(--background);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -607,7 +615,7 @@ ul li .item .icon svg.date path{
     border-bottom-left-radius: 50%; */
 }
 .about-image-side .about-profile.active{
-    animation: fadeInLeft 0.5s;
+    animation: fadeInLeft 0.7s;
 }
 
 
@@ -1732,6 +1740,9 @@ footer .socialFooter{
         transform: translateX(80px);
         transition: 1s;
         opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
     }
     main .menu .menu-site .nav_menu.show{
         opacity: 1;
@@ -1778,12 +1789,14 @@ footer .socialFooter{
         }
     }
 
-    .menu-site .nav_menu a{
+    .menu-site .nav_menu a, .menu-site .nav_menu.modeContainer p{
         width: 80px;
-        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: static;
-        float: left;
-        color: white;
+        color: var(--secondryColor);
+        /* background-color: red; */
     }
 
     .menu-site .nav_menu a p{
@@ -1796,21 +1809,20 @@ footer .socialFooter{
     }
 
     .menu-site .nav_menu.modeContainer{
-        width: 100%;
+        position: relative;
         /* background-color: red; */
     }
     
-    .menu-site .nav_menu.modeContainer .mode-text{
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-right: 10px;
+    .menu-site .nav_menu.modeContainer .pl-0{
+        position: absolute;
+        display: block;
+        width: 20px;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
-    .nav_menu.modeContainer .mode-text p{
-        padding-left: 38px;
-    }
+    
 
 
 
