@@ -123,6 +123,14 @@ toggleCon.addEventListener('click', e=>{
     })
 })
 
+nav_menu.forEach(nav =>{
+    nav.addEventListener('click', e=>{
+        nav_menu.forEach(nav_re =>{
+            nav_re.classList.remove('active')
+        })
+        nav.classList.add('active')
+    })
+})
 
 let fullName = document.querySelector('#fullname')
 let email = document.querySelector('#email')
@@ -159,7 +167,6 @@ console.log(mode)
 if(mode){
     mode.addEventListener('click', e=>{
         document.body.classList.toggle('dark-mode')
-
         if(!document.body.classList.contains('dark-mode')){
             document.cookie = 'mode=; expires=thu, 01 Jan 1970 00:00:00 UTC; path=/;'
             mode.innerHTML = `<path d="m2.72 0c-1.58.53-2.72 2.02-2.72 3.78 0 2.21 1.79 4 4 4 1.76 0 3.25-1.14 3.78-2.72-.4.13-.83.22-1.28.22-2.21 0-4-1.79-4-4 0-.45.08-.88.22-1.28z " fill="#000"/>`
@@ -206,18 +213,6 @@ if(document.cookie){
     mode.innerHTML = `<path d="m2.72 0c-1.58.53-2.72 2.02-2.72 3.78 0 2.21 1.79 4 4 4 1.76 0 3.25-1.14 3.78-2.72-.4.13-.83.22-1.28.22-2.21 0-4-1.79-4-4 0-.45.08-.88.22-1.28z " fill="#000"/>`
     box.checked = false
 }
-// if(!mode.classList.contains('custom-switch')){
-//     document.body.classList.add('dark-mode')
-//     if(document.cookie){
-//         mode.innerHTML = `<path d="m4 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm-2.5 1c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm-2.5 1c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-3.5 1.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm7 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm-6 2.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5 0c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm-2.5 1c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5z" fill="#fff"/>`
-        
-//     } else {
-//         mode.innerHTML = `<path d="m2.72 0c-1.58.53-2.72 2.02-2.72 3.78 0 2.21 1.79 4 4 4 1.76 0 3.25-1.14 3.78-2.72-.4.13-.83.22-1.28.22-2.21 0-4-1.79-4-4 0-.45.08-.88.22-1.28z " fill="#000"/>`
-
-//     }
-// } 
-
-
 
 document.addEventListener('click', e=>{
     // console.log(e.target.classList[0])

@@ -1823,6 +1823,14 @@ footer .socialFooter{
         display: none;
     }
 
+    .nav_menu.modeContainer.active p{
+        color: var(--secondryColor);
+        border-bottom: none;
+    }
+    .nav_menu.modeContainer:hover p{
+        color: var(--secondryColor);
+        border-bottom: 0px solid transparent;
+    }
     .menu-site .nav_menu.modeContainer{
         position: relative;
         /* background-color: red; */
@@ -2067,6 +2075,14 @@ footer .socialFooter{
 
     .about-text-side .about-left{
         order: 1;
+    }
+
+    .about-text-side .about-left h4{
+        font-size: 22px;
+        padding: 7px 0;
+        font-family: poppins;
+        color: var(--primary);
+
     }
     .about-text-side .about-right{
         order: 2;
