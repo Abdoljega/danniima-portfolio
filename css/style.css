@@ -35,6 +35,10 @@
 }
 
 @font-face {
+    font-family: roboto;
+    src: url(../font/Poppins/Poppins-ExtraLight.ttf);
+}
+@font-face {
     font-family: welcome;
     src: url(../font/Poppins/Poppins-Regular.ttf);
 }
@@ -332,12 +336,12 @@ main .menu .toggle{
 
 
 
-.wrapper .downloads{
+.greeting .downloads{
     width: fit-content;
     /* height: 50px; */
     /* background-color: brown; */
     position: absolute;
-    bottom: 0px;
+    bottom: -100px;
     /* left: 50%;
     transform: translateX(-50%); */
 }
@@ -990,7 +994,7 @@ ul li .item .icon svg.date path{
 }
 
 .skills-container .skills-list{
-    width: 65%;
+    width: 80%;
     min-height: 100%;
     height: auto;
     display: flex;
@@ -1210,6 +1214,108 @@ ul li .item .icon svg.date path{
     font-size: 20px;
     color: rgb(0, 0, 0);
     font-family: fontF;
+}
+
+
+
+
+
+/* Education Container */
+
+
+.container .section-qualification{
+    width: 100%;
+    height: auto;
+    background-color: var(--background);
+
+    & h2{
+        width: fit-content;
+        font-size: var(--headingSize);
+        font-family: poppins;
+        color: var(--secondryColor);
+        margin: auto;
+        text-align: center;
+        padding: 20px 0;
+        /* background-color: red; */
+        position: relative;
+
+        /* &::after{
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            border-radius: 5px;
+            background-color: var(--primary);
+            bottom: -20px;
+            margin: auto;
+        } */
+    }
+
+}
+
+.section-qualification .qualification-list{
+    width: 100%;
+    height: auto;
+    
+
+}
+
+.qualification-list .qualify{
+    width: 80%;
+    height: 300px;
+    margin: auto;
+    padding-left: 30px;
+    /* background-color: red; */
+    border-left: 3px solid var(--primary);
+    position: relative;
+
+    
+}
+
+.quality .graduation-cap{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    left: -18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & svg{
+        /* width: 22px; */
+        fill: white;
+    }
+}
+
+.quality h4{
+    font-size: 20px;
+    color: var(--secondryColor);
+    width: fit-content;
+    padding: 5px 10px;
+    background-color: #311c1c6b;
+    border-radius: 10px;
+    font-weight: 100;
+    
+    
+}
+
+.quality h2{
+    text-align: left;
+    margin: 0;
+    font-size: 25px;
+    font-weight: 200;
+    font-family: headName;
+    padding-bottom: 40px;
+}
+
+.quality p{
+    width: 350px;
+    font-size: 15px;
+    font-family: fontF;
+    
+    color: var(--secondryColor);
 }
 
 
@@ -2177,9 +2283,67 @@ footer .socialFooter{
 
 
 
+/* Qualification */
 
 
+    .section-qualification .qualification-list .qualify{
+        width: 80%;
+        height: auto;
+        margin: auto;
+        padding-left: 25px;
+        padding-bottom: 50px;
+        /* background-color: red; */
+        border-left: 3px solid var(--primary);
+        position: relative;
 
+        & .graduation-cap{
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            left: -18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & svg{
+                /* width: 22px; */
+                fill: white;
+            }
+        }
+
+        & h4{
+            font-size: 17px;
+            color: var(--secondryColor);
+            width: fit-content;
+            padding: 5px 15px;
+            background-color: #311c1c6b;
+            border-radius: 15px;
+            font-weight: 100;
+            position: relative;
+
+           
+            
+            
+        }
+
+        & h2{
+            text-align: left;
+            margin: 0;
+            font-size: 20px;
+            font-weight: 200;
+            font-family: headName;
+            padding-bottom: 20px;
+        }
+
+        & p{
+            width: 100%;
+            font-size: 12px;
+            font-family: roboto;
+            color: var(--secondryColor);
+        }
+    }
 
 
     .container .section-projects{
