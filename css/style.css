@@ -2310,7 +2310,8 @@ footer .socialFooter{
         width: 90%;
         height: 400px;
         margin: auto;
-        border-left: 2px solid yellow;
+        border-left: 2px solid var(--secondryColor);
+        margin-bottom: 30px;
         /* background-color: yellow; */
     }
 
@@ -2319,7 +2320,7 @@ footer .socialFooter{
         height: 200px;
         /* background-color: red; */
         margin: auto;
-        border-left: 3px solid red;
+        border-left: 3px solid var(--primary);
         border-radius: 8px;
         background-color: #242425;
         
@@ -2328,18 +2329,33 @@ footer .socialFooter{
     }
 
     .education-list .education h2{
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         color: var(--secondryColor);
         font-family: roboto, sans-serif;
         font-weight: 400;
-        padding: 10px 0;
+        padding: 15px 0;
     }
 
     .education h6{
         font-size: 0.8rem;
         color: var(--secondryColor);
         font-family: roboto;
+        font-weight: 200;
+
+        & i{
+            padding-right: 5px;
+            /* color: black; */
+        }
+    }
+
+    .education p{
+        padding: 15px 0;
+        padding-right: 7px;
+        font-size: 13px;
+        color: var(--secondryColor);
+        font-family: roboto;
         font-weight: 100;
+        line-height: 1.2;
     }
     .section-qualification .qualification-list .qualify{
         width: 80%;
@@ -2362,9 +2378,16 @@ footer .socialFooter{
             justify-content: center;
             align-items: center;
 
+            & i{
+                /* width: 22px; */
+                fill: white;
+                color: white;
+            }
+
             & svg{
                 /* width: 22px; */
                 fill: white;
+                color: white;
             }
         }
 
@@ -2387,15 +2410,18 @@ footer .socialFooter{
             text-align: left;
             margin: 0;
             font-size: 20px;
-            font-weight: 200;
-            font-family: headName;
+            font-weight: 300;
+            font-family: roboto, sans-serif;
+            padding-top: 10px;
             padding-bottom: 20px;
+            color: var(--secondryColor);
         }
 
         & p{
             width: 100%;
             font-size: 12px;
-            font-family: roboto;
+            font-family: roboto, sans-serif;
+            font-weight: 200;
             color: var(--secondryColor);
         }
     }
