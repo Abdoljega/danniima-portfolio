@@ -1,6 +1,5 @@
 
 
-
 :root{
     --primaryColor : #ffffff;
     --primary : #268dee;
@@ -34,10 +33,10 @@
     src: url(../font/roboto/Roboto-Regular.ttf);
 }
 
-@font-face {
+/* @font-face {
     font-family: roboto;
     src: url(../font/Poppins/Poppins-ExtraLight.ttf);
-}
+} */
 @font-face {
     font-family: welcome;
     src: url(../font/Poppins/Poppins-Regular.ttf);
@@ -224,14 +223,11 @@ main .menu .toggle{
 .profile-site .profile-img{
     width: 350px;
     height: 100%;
-
     /* background-color: chocolate; */
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    
-    
+    position: relative;  
 }
 
 .profile-img .imgProfile{
@@ -1223,12 +1219,13 @@ ul li .item .icon svg.date path{
 /* Education Container */
 
 
+
 .container .section-qualification{
     width: 100%;
     height: auto;
     background-color: var(--background);
 
-    & h2{
+    & .haedline{
         width: fit-content;
         font-size: var(--headingSize);
         font-family: poppins;
@@ -1969,29 +1966,52 @@ footer .socialFooter{
         height: calc(100vh - 60px);
         margin: auto;
         position: relative;
-        
+        /* background-image: url(../images/IMG-20230130-WA0084~2.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; */
         /* display: none; */
         /* background-color: red; */
     }
     
     .wrapper .profile-site{
-        width: 90%;
+        width: 100%;
         height: 100%;
         margin: auto;
         display: flex;
+        position: relative;
+
         /* background-color: blueviolet; */
     }
+
+.profile-site .profile-img{
+    width: 100%;
+    height: 100%;
+    /* background-color: chocolate; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;  
+    position: absolute;
+    opacity: 0.1;
+}
+
+.profile-img .imgProfile{
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    display: block;
+    background-color: var(--surface);
+    margin-top: 0px;
+    border-radius: 5px;
+    /* border-top-left-radius: 50%;
+    border-top-right-radius: 50%; */
+    /* border-radius: 110px; */
+    /* border: 1px solid var(--primary); */
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.16);
+    position: relative;
+}
     
-    .profile-site .profile-img{
-        width: 0px;
-        height: 100%;
-        /* background-color: chocolate; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        
-    }
 
     .profile-site .hiContainer{
         width: 100%;
@@ -2286,6 +2306,41 @@ footer .socialFooter{
 /* Qualification */
 
 
+    .section-qualification .education-list{
+        width: 90%;
+        height: 400px;
+        margin: auto;
+        border-left: 2px solid yellow;
+        /* background-color: yellow; */
+    }
+
+    .education-list .education{
+        width: 90%;
+        height: 200px;
+        /* background-color: red; */
+        margin: auto;
+        border-left: 3px solid red;
+        border-radius: 8px;
+        background-color: #242425;
+        
+        /* padding: 10px 0; */
+        padding-left: 20px;
+    }
+
+    .education-list .education h2{
+        font-size: 1.2rem;
+        color: var(--secondryColor);
+        font-family: roboto, sans-serif;
+        font-weight: 400;
+        padding: 10px 0;
+    }
+
+    .education h6{
+        font-size: 0.8rem;
+        color: var(--secondryColor);
+        font-family: roboto;
+        font-weight: 100;
+    }
     .section-qualification .qualification-list .qualify{
         width: 80%;
         height: auto;
@@ -2344,6 +2399,8 @@ footer .socialFooter{
             color: var(--secondryColor);
         }
     }
+
+
 
 
     .container .section-projects{
