@@ -12,6 +12,7 @@
     --duration : 0.5s;
     --headingSize : 35px;
     --toggle: #000;
+    --edulist: #ffffff;
 }
 
 .dark-mode{
@@ -23,6 +24,7 @@
     --inputColr : rgb(39, 39, 39);
     --surface : #1d1111;
     --toggle : white;
+    --edulist: #1a1212;
 }
 
 :root{
@@ -465,7 +467,7 @@ main .menu .toggle{
 
 .about-text-side .about-right{
     width: 100%;
-    padding: 20px 0;
+    padding: 50px 0;
     order: 1;
     /* height: 50%; */
     /* background-color: rgb(255, 255, 255); */
@@ -477,12 +479,14 @@ main .menu .toggle{
 
 .about-right h4{
     font-size: 22px;
-    font-family: poppins;
+    font-family: roboto, sans-serif;
     padding: 10px 0;
+    font-weight: 600;
 }
 .about-right p{
     font-size: 17px;
-    font-family: fontF;
+    font-family: roboto, sans-serif;
+    font-weight: 400;
     line-height: 30px;
     /* margin-bottom: 40px; */
 }
@@ -1224,6 +1228,7 @@ ul li .item .icon svg.date path{
     width: 100%;
     height: auto;
     background-color: var(--background);
+    padding-bottom: 50px;
 
     & .haedline{
         width: fit-content;
@@ -1253,7 +1258,7 @@ ul li .item .icon svg.date path{
 .section-qualification .qualification-list{
     width: 100%;
     height: auto;
-    
+    margin-top: 30px;
 
 }
 
@@ -2308,21 +2313,28 @@ footer .socialFooter{
 
     .section-qualification .education-list{
         width: 90%;
-        height: 400px;
+        height: auto;
         margin: auto;
-        border-left: 2px solid var(--secondryColor);
+        /* border-left: 2px solid var(--secondryColor); */
         margin-bottom: 30px;
         /* background-color: yellow; */
     }
 
+    .section-qualification .education-list h3{
+        font-size: 22px;
+        font-family: roboto, sans-serif;
+        font-weight: 500;
+        color: var(--secondryColor);
+    }
     .education-list .education{
         width: 90%;
-        height: 200px;
+        height: auto;
         /* background-color: red; */
-        margin: auto;
-        border-left: 3px solid var(--primary);
+        margin: 10px auto;
+        border-left: 2px solid var(--primary);
+        box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.123);
         border-radius: 8px;
-        background-color: #242425;
+        background-color: var(--edulist);
         
         /* padding: 10px 0; */
         padding-left: 20px;
@@ -2332,15 +2344,24 @@ footer .socialFooter{
         font-size: 1.3rem;
         color: var(--secondryColor);
         font-family: roboto, sans-serif;
-        font-weight: 400;
+        font-weight: 500;
         padding: 15px 0;
+    }
+
+    .education .school{
+        width: 100%;
+        height: 20px;
+        /* background-color: red; */
+        display: flex;
+        justify-content: space-between;
+        padding-right: 10px;
     }
 
     .education h6{
         font-size: 0.8rem;
         color: var(--secondryColor);
         font-family: roboto;
-        font-weight: 200;
+        font-weight: 400;
 
         & i{
             padding-right: 5px;
@@ -2357,6 +2378,15 @@ footer .socialFooter{
         font-weight: 100;
         line-height: 1.2;
     }
+
+    .qualification-list h3{
+        font-size: 22px;
+        font-family: roboto, sans-serif;
+        font-weight: 500;
+        color: var(--secondryColor);
+        padding: 10px 15px;
+    }
+
     .section-qualification .qualification-list .qualify{
         width: 80%;
         height: auto;
