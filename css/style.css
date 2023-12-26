@@ -327,11 +327,12 @@ main .menu .toggle{
 
 .greeting .summery{
     font-size: 15px;
-    width: 270px;
+    width: 80%;
     font-family: roboto, sans-serif;
-    font-weight: 200;
+    font-weight: 400;
     color: var(--secondryColor);
     visibility: hidden;
+    line-height: 25px;
 }
 
 
@@ -342,8 +343,8 @@ main .menu .toggle{
     /* background-color: brown; */
     position: absolute;
     bottom: -100px;
-    /* left: 50%;
-    transform: translateX(-50%); */
+    left: 40%;
+    transform: translateX(-50%);
 }
 
 .downloads .downloadCv{
@@ -353,12 +354,13 @@ main .menu .toggle{
     justify-content: center;
     align-items: center;
     /* background-color: var(--primary); */
+    padding: 5px 10px;
     border: 2px solid var(--primary);
     border-radius: 7px;
 }
 
 .downloadCv p{
-    width: 110px;
+    width: auto;
     font-size: 15px;
     color: var(--primary);
     padding: 7px 10px;
@@ -369,12 +371,13 @@ main .menu .toggle{
 
 }
 
-/* .downloadCv:hover p{
-    width: 150px;
+.downloadCv:hover p{
+    width: auto;
     left: 0px;
     display: block;
-    background-color: brown;
-} */
+    color: var(--secondryColor);
+    /* background-color: brown; */
+}
 .downloadCv svg{
     width: 32px;
     height: 32px;
@@ -1294,10 +1297,10 @@ ul li .item .icon svg.date path{
     }
 
     .education-list .education h4{
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         color: var(--secondryColor);
         font-family: roboto, sans-serif;
-        font-weight: 500;
+        font-weight: 300;
         padding: 15px 0;
     }
 
@@ -1327,10 +1330,10 @@ ul li .item .icon svg.date path{
     .education p{
         padding: 15px 0;
         padding-right: 7px;
-        font-size: 13px;
+        font-size: 14px;
         color: var(--secondryColor);
         font-family: roboto;
-        font-weight: 100;
+        font-weight: 300;
         line-height: 1.2;
     }
 
@@ -1370,7 +1373,7 @@ ul li .item .icon svg.date path{
     height: 35px;
     background-color: var(--primary);
     border-radius: 50%;
-    left: -18px;
+    left: -20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1410,7 +1413,7 @@ ul li .item .icon svg.date path{
     width: 100%;
     font-size: 12px;
     font-family: roboto, sans-serif;
-    font-weight: 200;
+    font-weight: 400;
     color: var(--secondryColor);
 }
 
@@ -2481,10 +2484,7 @@ footer .socialFooter{
 
     .education-list .education h4{
         font-size: 1.4rem;
-        color: var(--secondryColor);
-        font-family: roboto, sans-serif;
-        font-weight: 200;
-        padding: 15px 0;
+        
     }
 
     .education .school{
@@ -2511,13 +2511,9 @@ footer .socialFooter{
     }
 
     .education p{
-        padding: 15px 0;
-        padding-right: 7px;
-        font-size: 13px;
-        color: var(--secondryColor);
-        font-family: roboto;
-        font-weight: 100;
-        line-height: 1.2;
+        
+        font-size: 80%;
+        
     }
 
     .section-qualification .qualification-list{
