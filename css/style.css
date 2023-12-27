@@ -10,9 +10,15 @@
     --surface : rgb(95, 20, 20);
     --width : 2px;
     --duration : 0.5s;
-    --headingSize : 35px;
     --toggle: #000;
     --edulist: #ffffff;
+
+
+    /* TextSize */
+
+    --h2 : 2.1rem;
+    --ph2 : 1.7rem;
+    --paragrap : 1.6rem;
 }
 
 .dark-mode{
@@ -24,7 +30,7 @@
     --inputColr : rgb(39, 39, 39);
     --surface : #1d1111;
     --toggle : white;
-    --edulist: #1a1212;
+    --edulist: #1d1b1b;
 }
 
 :root{
@@ -107,29 +113,27 @@ main .animation-container{
 
 main .container{
     width: 100%;
-    height: calc(100% - 60px);
+    height: 100%;
     /* margin-top: 60px; */
     overflow-x: hidden;
-    background-color: #fafafa;
-    background-image: url(../images/pngkey.com-hexagon.png);
-    background-repeat: no-repeat;
-    background-position: right;
+    background-color: var(--background);
+    
 }
 
-
+/*--------------------- 1- Header Area CSS (Start) ---------------------*/
 
 main .menu{
     width: 100%;
     height: 60px;
     display: flex;
     justify-content: space-between;
-    /* position: fixed; */
+    position: fixed;
     background-color: var(--primaryColor);
     z-index: 20;
     /* background-color: brown; */
 }
 
-main .menu .toggle{
+main .menu .toggle-container{
     display: none;
 }
 
@@ -202,16 +206,19 @@ main .menu .toggle{
 }
 
 
+/*--------------------- 1- Header Area CSS (End) ---------------------*/
+
+
+/*--------------------- 2- Home Area CSS (Start) ---------------------*/
 /* wrapper */
 
 .container .wrapper{
     width: 100%;
-    height: calc(100vh - 60px);
+    height: 100%;
     margin: auto;
     position: relative;
     background-color: var(--background);
-    /* display: none; */
-    /* background-color: red; */
+    padding-top: 20px;
 }
 
 .wrapper .profile-site{
@@ -261,7 +268,7 @@ main .menu .toggle{
     /* border: 5px solid white; */
 }
 
-.profile-site .hiContainer{
+.profile-site .binner-container{
     flex: 1;
     height: 100%;
     display: flex;
@@ -270,27 +277,28 @@ main .menu .toggle{
     /* background-color: red; */
 }
 
-.hiContainer .greeting{
+.binner-container .binner-text{
     width: 100%;
-    height: 270px;
+    height: auto;
     padding-left: 30px;
     /* background-color: rgb(44, 21, 66); */
     /* border-left: 3px solid var(--primary); */
     position: relative;
     visibility: hidden;
 
-    &::after{
-        content: '';
-        width: 3px;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: var(--primary);
-        animation: centerLine 4s linear;
-        visibility: visible;
-    }
+}
+
+.binner-container .binner-text::after{
+    content: '';
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary);
+    animation: centerLine 4s linear;
+    visibility: visible;
 }
 
 @keyframes centerLine {
@@ -305,14 +313,7 @@ main .menu .toggle{
     }
 }
 
-.greeting p{
-    font-size: 15px;
-    color: var(--primary);
-    font-family: roboto, sans-serif;
-    opacity: 1;
-    
-}
-.greeting h1{
+.binner-text h1{
     padding: 5px 0;
     font-size: 50px;
     font-family: headName;
@@ -320,12 +321,12 @@ main .menu .toggle{
     visibility: hidden;
 }
 
-.greeting h1 big{
+.binner-text h1 big{
     font-size: 50px;
     color: var(--primary);
 }
 
-.greeting .summery{
+.binner-text p{
     font-size: 15px;
     width: 80%;
     font-family: roboto, sans-serif;
@@ -337,7 +338,7 @@ main .menu .toggle{
 
 
 
-.greeting .downloads{
+.binner-text .downloads{
     width: fit-content;
     /* height: 50px; */
     /* background-color: brown; */
@@ -392,11 +393,11 @@ main .menu .toggle{
 }
 
 
+/*--------------------- 2- Home Area CSS (End) ---------------------*/
 
 
 
-
-
+/*--------------------- 3- About Area CSS (Start) ---------------------*/
 
 /* ABOUT */
 
@@ -404,18 +405,13 @@ main .menu .toggle{
     width: 100%;
     min-height: 100vh;
     background-color: var(--background);
-    /* background-color: red; */
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     position: relative;
-    /* display: none; */
-    
+    padding-top: 50px;
 }
 
 .section-about h2{
     width: fit-content;
-    font-size: var(--headingSize);
+    font-size: var(--h2);
     font-family: poppins;
     padding: 15px;
     text-align: center;
@@ -539,13 +535,10 @@ ul li .item .icon svg{
     fill: var(--headerColor);
 }
 
-/* ul li .item .icon svg.date{
-    fill: rgb(255, 255, 255);
-} */
-
 ul li .item .icon svg.date rect{
     fill: var(--secondryColor);
 }
+
 ul li .item .icon svg.date path{
     fill: transparent;
     stroke: var(--secondryColor);
@@ -578,9 +571,7 @@ ul li .item .icon svg.date path{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-
-    
+    position: relative;    
 
 }
 
@@ -615,6 +606,7 @@ ul li .item .icon svg.date path{
     /* background-color: rgb(194, 194, 194); */
     border: 1px solid rgb(109, 108, 108);
 }
+
 .about-profile img{
     width: 100%;
     height: 100%;
@@ -628,311 +620,7 @@ ul li .item .icon svg.date path{
 }
 
 
-@keyframes fadeInLeft {
-    0% {
-        opacity: 0;
-        transform: translate3d(-100%, 0, 0)
-    }
-    to {
-        opacity: 1;
-        transform: none
-    }
-}
-
-
-/* PROJECTS */
-
-.container .section-projects{
-    width: 100vw;
-    min-height: 100vh;
-    background-color: var(--background);
-    /* display: none; */
-}
-
-.section-projects .project-header{
-    width: 100%;
-    /* height: 150px; */
-    /* background-color: rebeccapurple; */
-    margin: auto;
-    position: relative;
-
-    &::after{
-        content: '';
-        width: 100px;
-        height: 8px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -20px;
-        background-color: var(--primary);
-        border-radius: 7px;
-    }
-}
-
-.project-header h2{
-
-    font-size: var(--headingSize);
-    font-family: poppins;
-    padding: 7px 0;
-    margin: 0;
-    text-align: center;
-    color: var(--headerColor);
-
-    
-}
-
-.project-header p{
-    width: 45%;
-    text-align: center;
-    margin: 0 auto;
-    padding: 4px 20px;
-    font-size: 19px;
-    font-family: fontF;
-    color: var(--secondryColor);
-}
-
-.section-projects .projects{
-    width: 100%;
-    height: 600px;
-    /* background-color: chartreuse; */
-    /* margin: 20px 0; */
-    display: flex;
-    /* visibility: hidden; */
-}
-
-/* .section-projects .projects.active{
-    animation: projectAnimetion 400ms linear; 
-    visibility: visible;
-
-} */
-
-@keyframes projectAnimetion {
-    0%{
-        visibility: hidden;
-        opacity: 0;
-        margin-top: 100px;
-    }
-
-    70%{
-        visibility: visible;
-        opacity: 0.5;
-        margin-top: 20px;
-    }
-
-    100%{
-        visibility: visible;
-        opacity: 1;
-        margin-top: 0;
-    }
-    
-}
-
-.projects .nav_right{
-    visibility: hidden;
-}
-
-.projects .nav_right.active{
-    animation: rightAnimation 0.4s linear;
-    visibility: visible;
-}
-
-.projects .nav_left{
-    visibility: hidden;
-}
-.projects .nav_left.active{
-    animation: leftAnimation 0.4s linear;
-    visibility: visible;
-}
-
-@keyframes leftAnimation {
-    0%{
-        visibility: hidden;
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-    
-    100%{
-        visibility: visible;
-        opacity: 1;
-        transform: translateX(0);
-    }
-    
-}
-
-@keyframes rightAnimation {
-    0%{
-        visibility: hidden;
-        opacity: 0;
-        transform: translateX(200px);
-    }
-
-    
-    to{
-        visibility: visible;
-        opacity: 1;
-        transform: none;
-    }
-    
-}
-
-.projects .projectImage, .projectInformation{
-    width: 50%;
-    height: 100%;
-    /* opacity: 1; */
-    /* background-color: rgb(46, 46, 16); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    
-
-    
-
-    .info .info-discription{
-        width: 90%;
-        height: auto;
-        /* background-color: red; */
-        margin: auto;
-    }
-    .info-discription p{
-        font-size: 17px;
-        font-family: welcome;
-        padding: 10px 5px;
-        text-align: center;
-        color: var(--secondryColor);
-    }
-    
-
-    .info .info-links{
-        width: fit-content;
-        display: flex;
-        margin: auto;
-
-        & a{
-            width: fit-content;
-            /* padding: 5px 10px; */
-            text-decoration: none;
-            margin-right: 5px;
-
-            & p{
-                padding: 7px 20px;
-                width: fit-content;
-                background-color: rgb(101, 101, 228);
-                color: white;
-                border-radius: 5px;
-                font-size: 20px;
-            }
-        }
-
-        & .info-github{
-            width: 120px;
-            height: 35px;
-            background-color: rgb(70, 12, 12);
-            border-radius: 5px;
-            margin-left: 5px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-
-            & a{
-                width: 120px;
-                display: flex;
-                /* justify-content: space-around; */
-                align-items: center;
-
-                & img{
-                    width: 30px;
-                    margin-left: 7px;
-                }
-                & p{
-                    color: white;
-                    padding: 0;
-                    padding-right: 10px;
-                    font-family: welcome;
-                    background-color: transparent;
-                    /* padding: 7px 20px; */
-                }
-            }
-            
-        }
-    }
-
-
-
-}
-
-.projectInformation .info{
-    width: 80%;
-    height: 50%;
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-    /* background-color: brown; */
-
-    
-}
-
-.info .info-header{
-    width: fit-content;
-    height: auto;
-    margin: auto;
-    /* background-color: blueviolet; */
-
-    
-}
-
-.info .info-header h3{
-    padding: 12px 0px;
-    font-size: 30px;
-    font-family: welcome;
-    color: blueviolet;
-}
-.projects .projectImage .destop-image-container{
-    width: 80%;
-    height: auto;
-    /* background-color: rgb(180, 167, 167); */
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    /*top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-}
-
-.destop-image-container .destop{
-    width: 100%;
-    height: fit-content;
-    /* background-color: coral; */
-    border: 7px solid white;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    margin: 0;
-    padding: 0;
-}
-
-.destop-image-container .phone{
-    width: 160px;
-    height: auto;
-    /* background-color: black; */
-    position: absolute;
-    right: -40px;
-    bottom: -30px;
-    border: 3px solid white;
-    border-radius: 5px;
-    padding: 0;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.6) 0px 2px 8px -1px;
-}
-
-.destop-image-container .phone.left{
-    left: -40px;
-}
-
-.destop img, .phone img{
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
+/*--------------------- 3- About Area CSS (End) ---------------------*/
 
 
 
@@ -941,30 +629,26 @@ ul li .item .icon svg.date path{
 
 
 
-
-
+/*--------------------- 4- Skill Area CSS (Start) ---------------------*/
 
 /* SKILLS */
 
 .container .section-skills{
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     height: auto;
     background-color: var(--background);
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 50px;
     /* display: none; */
 }
 
 .section-skills .skills-container{
     width: 100vw;
     min-height: 100vh;
-    /* height: auto; */
-    /* background-color: rgb(247, 241, 241); */
-    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.144); */
-    position: absolute;
 }
 .skills-container .skills-header{
     width: 100%;
@@ -976,23 +660,23 @@ ul li .item .icon svg.date path{
     /* background-color: rgb(46, 109, 109); */
     position: relative;
 
-    &::after{
-        content: '';
-        width: 50px;
-        height: 8px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -12px;
-        background-color: var(--primary);
-        border-radius: 7px;
-    }
-
 
 }
 
+
+.skills-header::after{
+    content: '';
+    width: 50px;
+    height: 8px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    background-color: var(--primary);
+    border-radius: 7px;
+}
 .skills-header h2{
-    font-size:var(--headingSize);
+    font-size:var(--h2);
     text-align: center;
     font-family: poppins;
     color: var(--headerColor);
@@ -1022,100 +706,100 @@ ul li .item .icon svg.date path{
     transform: translateY(80px);
     /* display: flex;
     justify-content: center;
-    align-items: center; */
-
-
-    &::after{
-        content: '';
-        display: block;
-        position: absolute;
-        top: -1px;
-        left: -1px;
-        right: -1px;
-        bottom: -1px;
-        border-left: 1px solid #ff5d56;
-        border-right: 1px solid #ff5d56;
-        transform: scale(1,0);
-        transition: all 0.6s;
-    }
-
-
-    &::before{
-        content: '';
-        display: block;
-        position: absolute;
-        top: -1px;
-        left: -1px;
-        right: -1px;
-        bottom: -1px;
-        border-top: 1px solid #ff5d56;
-        border-bottom: 1px solid #ff5d56;
-        transform: scale(0,1);
-        transition: all 0.6s;
-    }
-
-    &:hover::after,  &:hover::before{
-        transform: scale(1);
-    }
-
-    & .skillDetails{
-        position: absolute;
-        width: 80%;
-        height: 80%;
-        background-color: rgba(24, 24, 24, 0.747);
-        transition: 1s;
-        /* bottom: 0; */
-        /* display: flex;
-        justify-content: center;
-        align-items: center; */
-        opacity: 0;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        & .textSk{
-            width: 90%;
-            height: 30%;
-            
-            /* background-color: blueviolet; */
-
-            & p{
-                font-size: 16px;
-                /* padding: 25px; */
-                color: rgb(233, 72, 72);
-                font-family: welcome;
-                padding: 0px 15px;
-                /* text-align: center; */
-                visibility: hidden;
-                opacity: 0;
-            }
-
-            & h3{
-                /* text-align: center; */
-                padding: 0px 15px;
-                padding-top: 15px;
-                font-size: 22px;
-                color: white;
-                visibility: hidden;
-                font-family: poppins;opacity: 0;
-            }
-        }
-        
-    }
-
-    &:hover .skillDetails{
-        width: 90%;
-        height: 90%;
-        opacity: 1;
-        transition: 1s;
-    }
-    &:hover .skillDetails h3, &:hover .skillDetails p{
-        transition: 1s;
-        visibility: visible;
-        opacity: 1;
-        animation: skillanimation 1s;
-    }
+    align-items: center; */    
     
+}
+
+.skills-list .skill::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-left: 1px solid #ff5d56;
+    border-right: 1px solid #ff5d56;
+    transform: scale(1,0);
+    transition: all 0.6s;
+}
+
+.skills-list .skill::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-top: 1px solid #ff5d56;
+    border-bottom: 1px solid #ff5d56;
+    transform: scale(0,1);
+    transition: all 0.6s;
+}
+
+.skills-list .skill:hover::after,  .skills-list .skill:hover::before{
+    transform: scale(1);
+}
+
+.skills-list .skill .skillDetails{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background-color: rgba(24, 24, 24, 0.747);
+    transition: 1s;
+    /* bottom: 0; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    
+}
+
+.skill .skillDetails .textSk{
+    width: 90%;
+    height: 30%;
+    
+    /* background-color: blueviolet; */
+}
+
+.skillDetails .textSk p{
+    font-size: 16px;
+    /* padding: 25px; */
+    color: rgb(233, 72, 72);
+    font-family: welcome;
+    padding: 0px 15px;
+    /* text-align: center; */
+    visibility: hidden;
+    opacity: 0;
+}
+
+.skillDetails .textSk h3{
+    /* text-align: center; */
+    padding: 0px 15px;
+    padding-top: 15px;
+    font-size: 22px;
+    color: white;
+    visibility: hidden;
+    font-family: poppins;opacity: 0;
+}
+
+.skills-list .skill:hover .skillDetails{
+    width: 90%;
+    height: 90%;
+    opacity: 1;
+    transition: 1s;
+}
+
+.skills-list .skill:hover .skillDetails h3, .skills-list .skill:hover .skillDetails p{
+    transition: 1s;
+    visibility: visible;
+    opacity: 1;
+    animation: skillanimation 1s;
 }
 
 @keyframes skillanimation {
@@ -1222,8 +906,10 @@ ul li .item .icon svg.date path{
 }
 
 
+/*--------------------- 4- Skill Area CSS (End) ---------------------*/
 
 
+/*--------------------- 5- Education Area CSS (Start) ---------------------*/
 
 /* Education Container */
 
@@ -1233,31 +919,17 @@ ul li .item .icon svg.date path{
     width: 100%;
     height: auto;
     background-color: var(--background);
-    padding-bottom: 50px;
+    padding-top: 50px;
 
-    & .haedline{
-        width: fit-content;
-        font-size: var(--headingSize);
-        font-family: poppins;
-        color: var(--secondryColor);
-        margin: auto;
-        text-align: center;
-        padding: 20px 0;
-        /* background-color: red; */
-        position: relative;
+}
 
-        /* &::after{
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 3px;
-            border-radius: 5px;
-            background-color: var(--primary);
-            bottom: -20px;
-            margin: auto;
-        } */
-    }
-
+.container .section-qualification h2{
+    width: fit-content;
+    font-size: var(--h2);
+    color: var(--secondryColor);
+    margin: auto;
+    padding: 10px 0;
+    font-family: roboto, sans-serif;
 }
 
 .section-qualification .education-container{
@@ -1265,6 +937,7 @@ ul li .item .icon svg.date path{
     height: auto;
     display: flex;
     margin: auto;
+    margin-top: 40px;
 }
 
 .section-qualification .education-list{
@@ -1287,14 +960,28 @@ ul li .item .icon svg.date path{
         height: auto;
         /* background-color: red; */
         margin: 10px auto;
-        border-left: 2px solid var(--primary);
+        /* border-left: 2px solid var(--primary); */
         box-shadow: 0 2px 0px 1px rgba(0, 0, 0, 0.123);
         border-radius: 8px;
-        background-color: var(--edulist);
-        
+        background-color: var(--inputColr);
+        position: relative;
         /* padding: 10px 0; */
         padding-left: 20px;
+
+        
     }
+
+    .education-list .education::after{
+        content: '';
+        position: absolute;
+        width: 3px;
+        height: 40%;
+        background-color: var(--primary);
+        left: -1.5px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
 
     .education-list .education h4{
         font-size: 1.4rem;
@@ -1321,12 +1008,12 @@ ul li .item .icon svg.date path{
         font-weight: 400;
         padding-bottom: 5px;
 
-        & i{
-            padding-right: 5px;
-            /* color: black; */
-        }
+        
     }
-
+    .education h6 i{
+        padding-right: 5px;
+        /* color: black; */
+    }
     .education p{
         padding: 15px 0;
         padding-right: 7px;
@@ -1378,14 +1065,13 @@ ul li .item .icon svg.date path{
     justify-content: center;
     align-items: center;
 
-    & i{
+}
+
+.graduation-cap i{
         /* width: 22px; */
         fill: white;
         color: white;
     }
-
-}
-
 .qualify h5{
     font-size: 17px;
     color: var(--secondryColor);
@@ -1418,53 +1104,323 @@ ul li .item .icon svg.date path{
 }
 
 
-.quality h4{
-    font-size: 20px;
-    color: var(--secondryColor);
-    width: fit-content;
-    padding: 5px 10px;
-    background-color: #311c1c6b;
-    border-radius: 10px;
-    font-weight: 100;
-    
-    
+
+
+
+
+
+/*--------------------- 5- Education Area CSS (End) ---------------------*/
+
+
+
+
+/*--------------------- 6- Project Area CSS (Start) ---------------------*/
+
+
+.container .section-projects{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--background);
+    padding-top: 50px;
+    /* display: none; */
 }
 
-.quality h2{
-    text-align: left;
+.section-projects .project-header{
+    width: 100%;
+    /* background-color: rebeccapurple; */
+    margin: auto;
+    position: relative;
+
+}
+
+.section-projects .project-header::after{
+    content: '';
+    width: 100px;
+    height: 8px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    background-color: var(--primary);
+    border-radius: 7px;
+}
+
+.project-header h2{
+    font-size: var(--h2);
+    font-family: poppins;
+    padding: 7px 0;
     margin: 0;
-    font-size: 25px;
-    font-weight: 200;
-    font-family: headName;
-    padding-bottom: 40px;
+    text-align: center;
+    color: var(--headerColor);
+
+    
 }
 
-.quality p{
-    width: 350px;
-    font-size: 15px;
+.project-header p{
+    width: 45%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 4px 20px;
+    font-size: 19px;
     font-family: fontF;
-    
     color: var(--secondryColor);
 }
 
+.section-projects .projects{
+    width: 100%;
+    height: 600px;
+    /* background-color: chartreuse; */
+    /* margin: 20px 0; */
+    display: flex;
+    /* visibility: hidden; */
+}
+
+
+@keyframes projectAnimetion {
+    0%{
+        visibility: hidden;
+        opacity: 0;
+        margin-top: 100px;
+    }
+
+    70%{
+        visibility: visible;
+        opacity: 0.5;
+        margin-top: 20px;
+    }
+
+    100%{
+        visibility: visible;
+        opacity: 1;
+        margin-top: 0;
+    }
+    
+}
+
+.projects .nav_right{
+    visibility: hidden;
+}
+
+.projects .nav_right.active{
+    animation: rightAnimation 0.4s linear;
+    visibility: visible;
+}
+
+.projects .nav_left{
+    visibility: hidden;
+}
+.projects .nav_left.active{
+    animation: leftAnimation 0.4s linear;
+    visibility: visible;
+}
+
+@keyframes leftAnimation {
+    0%{
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    
+    100%{
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+
+@keyframes rightAnimation {
+    0%{
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(200px);
+    }
+
+    
+    to{
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+    }
+    
+}
+
+.projects .projectImage, .projectInformation{
+    width: 50%;
+    height: 100%;
+    /* opacity: 1; */
+    /* background-color: rgb(46, 46, 16); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+
+    
+
+    
+    .info-discription p{
+        font-size: 17px;
+        font-family: welcome;
+        padding: 10px 5px;
+        text-align: center;
+        color: var(--secondryColor);
+    }
+    
+
+    
 
 
 
+}
+
+.projectInformation .info{
+    width: 80%;
+    height: 50%;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    /* background-color: brown; */
+
+    
+}
+
+.info .info-discription{
+    width: 90%;
+    height: auto;
+    /* background-color: red; */
+    margin: auto;
+}
+
+.info .info-links{
+    width: fit-content;
+    display: flex;
+    margin: auto;    
+}
+
+.info-links a{
+    width: fit-content;
+    /* padding: 5px 10px; */
+    text-decoration: none;
+    margin-right: 5px;
+
+    
+}
+
+.info-links a p{
+    padding: 7px 20px;
+    width: fit-content;
+    background-color: rgb(101, 101, 228);
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.info-links .info-github{
+    width: 120px;
+    height: 35px;
+    background-color: rgb(70, 12, 12);
+    border-radius: 5px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.info-github a{
+    width: 120px;
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+
+    
+}
+
+.info-github a img{
+    width: 30px;
+    margin-left: 7px;
+}
+.info-github a p{
+    color: white;
+    padding: 0;
+    padding-right: 10px;
+    font-family: welcome;
+    background-color: transparent;
+    /* padding: 7px 20px; */
+}
+
+.info .info-header{
+    width: fit-content;
+    height: auto;
+    margin: auto;
+    /* background-color: blueviolet; */
+
+    
+}
+
+.info .info-header h3{
+    padding: 12px 0px;
+    font-size: 30px;
+    font-family: welcome;
+    color: var(--primary);
+}
+.projects .projectImage .destop-image-container{
+    width: 80%;
+    height: auto;
+    /* background-color: rgb(180, 167, 167); */
+    position: absolute;
+    padding: 0;
+    margin: 0;
+}
+
+.destop-image-container .destop{
+    width: 100%;
+    height: fit-content;
+    /* background-color: coral; */
+    border: 7px solid white;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.destop-image-container .phone{
+    width: 160px;
+    height: auto;
+    /* background-color: black; */
+    position: absolute;
+    right: -20px;
+    bottom: -30px;
+    border: 3px solid white;
+    border-radius: 5px;
+    padding: 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.6) 0px 2px 8px -1px;
+}
+
+.destop-image-container .phone.left{
+    left: -40px;
+}
+
+.destop img, .phone img{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
 
 
 
+/*--------------------- 6- Project Area CSS (End) ---------------------*/
 
+
+/*--------------------- 7- Contact Area CSS (Start) ---------------------*/
 
 /* wrapper-contact */
 
 .container .section-contact{
     width: 100%;
     min-height: 100vh;
-    /* display: flex; */
-    /* display: flex; */
-    /* position: relative; */
-    /* justify-content: center; */
-    /* align-items: center; */
+    padding-top: 50px;
     background-color: var(--background);
 }
 
@@ -1483,17 +1439,19 @@ ul li .item .icon svg.date path{
     text-align: center;
     position: relative;
 
-    &::after{
-        content: '';
-        width: 70px;
-        height: 8px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -12px;
-        background-color: var(--primary);
-        border-radius: 7px;
-    }
+    
+}
+
+.contact-header::after{
+    content: '';
+    width: 70px;
+    height: 8px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    background-color: var(--primary);
+    border-radius: 7px;
 }
 
 .contact-header h2{
@@ -1501,7 +1459,7 @@ ul li .item .icon svg.date path{
     text-align: center;
     padding: 20px 0;
     margin: auto;
-    font-size: var(--headingSize);
+    font-size: var(--h2);
     font-family: fontF;
     color: var(--headerColor);
 }
@@ -1543,7 +1501,6 @@ ul li .item .icon svg.date path{
     color: white;
     background-color: var(--inputColr);
     /* color: rgb(189, 187, 187); */
-    /* display: none; */
 }
 
 
@@ -1557,7 +1514,6 @@ ul li .item .icon svg.date path{
     border: 0;
     font-size: 16px;
     background-color: var(--inputColr)
-    /* color: rgb(97, 97, 97); */
 }
 
 
@@ -1695,12 +1651,12 @@ ul li .item .icon svg.date path{
 
 
 
+/*--------------------- 7- Contact Area CSS (End) ---------------------*/
 
 
 
 
-
-
+/*--------------------- 8- Footer Area CSS (Start) ---------------------*/
 
 
 
@@ -1815,13 +1771,14 @@ footer .socialFooter{
 
 
 
-
+/*--------------------- 8- Footer Area CSS (End) ---------------------*/
 
 
 
 
 
 @media screen and (max-width : 780px){
+    
     main{
         width: 100%;
         height: 100%;
@@ -1830,7 +1787,6 @@ footer .socialFooter{
 
     main .menu {
         position: static;
-        z-index: 10;
     }
 
     .menu .menu-logo-site{
@@ -1864,32 +1820,30 @@ footer .socialFooter{
         width: 100%;
         height: 5px;
         position: relative;
-        display: block;
         background-color: var(--toggle);
         animation: toggleCenter 1s;
+    }
 
-        &::after{
-            content: '';
-            width: 100%;
-            height: 5px;
-            position: absolute;
-            transform: translateY(-9px);
-            transition: 1s;
-            background-color: var(--toggle);
-            animation: toggleAnimation 1s;
-        }
+    main .menu .toggle::after{
+        content: '';
+        width: 100%;
+        height: 5px;
+        position: absolute;
+        transform: translateY(-9px);
+        transition: 1s;
+        background-color: var(--toggle);
+        animation: toggleAnimation 1s;
+    }
 
-        &::before{
-            content: '';
-            width: 100%;
-            height: 5px;
-            position: absolute;
-
-            margin-top: 9px;
-            transition: 1s;
-            background-color: var(--toggle);
-            animation: togglebumAnimation 1s;
-        }
+    main .menu .toggle::before{
+        content: '';
+        width: 100%;
+        height: 5px;
+        position: absolute;
+        margin-top: 9px;
+        transition: 1s;
+        background-color: var(--toggle);
+        animation: togglebumAnimation 1s;
     }
 
     main .menu .toggle.active{
@@ -1901,38 +1855,34 @@ footer .socialFooter{
         align-items: center;
         background-color: var(--toggle);
         animation: toggleCenterActive 1s;
-
-        &::after{
-            content: '';
-            width: 100%;
-            height: 5px;
-            position: absolute;
-            transform: rotate(45deg) translateY(0px);
-            top: 0%;
-            margin: 0;
-            transition: 1s;
-            /* background-color: black; */
-            animation: toggleAnimationActive 1s;
-        }
-
-        &::before{
-            content: '';
-            width: 100%;
-            height: 5px;
-            position: absolute;
-            transform: rotate(45deg);
-            top: 0;
-            margin: 0;
-            transform: rotate(-45deg);
-            transition: 1s;
-            /* background-color: black; */
-            animation: togglebumAnimationActive 1s;
-        }
     }
 
-
+    main .menu .toggle.active::after{
+        content: '';
+        width: 100%;
+        height: 5px;
+        position: absolute;
+        transform: rotate(45deg) translateY(0px);
+        top: 0%;
+        margin: 0;
+        transition: 1s;
+        /* background-color: black; */
+        animation: toggleAnimationActive 1s;
+    }
     
-
+    main .menu .toggle.active::before{
+        content: '';
+        width: 100%;
+        height: 5px;
+        position: absolute;
+        transform: rotate(45deg);
+        top: 0;
+        margin: 0;
+        transform: rotate(-45deg);
+        transition: 1s;
+        /* background-color: black; */
+        animation: togglebumAnimationActive 1s;
+    }
 
 
     main .menu .menu-site{
@@ -1947,16 +1897,16 @@ footer .socialFooter{
         z-index: 50;
         transition: 1s;
         margin: 0;
+    }
 
-        &::after{
-            content: '';
-            position: absolute;
-            width: 0%;
-            height: 100%;
-            background-color: #00000049;
-            left: 0%;
-            transition: 1s;
-        }
+    main .menu .menu-site::after{
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 100%;
+        background-color: #00000049;
+        left: 0%;
+        transition: 1s;
     }
 
     main .menu .menu-site.active{
@@ -1966,17 +1916,17 @@ footer .socialFooter{
         margin: 0;
         z-index: 100;
 
-        &::after{
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: #00000049;
-            left: -100%;
-        }
+    }
+
+    main .menu .menu-site.active::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #00000049;
+        left: -100%;
     }
    
-
     main .menu .menu-site .nav_menu{
         width: 100%;
         height: 60px;
@@ -2024,19 +1974,6 @@ footer .socialFooter{
     .menu-site .nav_menu:nth-child(6).show{
         transition: 1s;
         transition-delay: 500ms;
-    }
-    @keyframes navAnimation {
-        0%{
-            visibility: hidden;
-            opacity: 0;
-            transform: translateX(80px);
-        }
-
-        100%{
-            visibility: visible;
-            opacity: 1;
-            transform: translateX(0);
-        }
     }
 
     .menu-site .nav_menu a, .menu-site .nav_menu.modeContainer p{
@@ -2093,17 +2030,14 @@ footer .socialFooter{
     main .container{
         width: 100%;
     }
+
+    
     .container .wrapper{
         width: 100%;
         height: calc(100vh - 60px);
         margin: auto;
         position: relative;
-        /* background-image: url(../images/IMG-20230130-WA0084~2.jpg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover; */
-        /* display: none; */
-        /* background-color: red; */
+        padding: 0;
     }
     
     .wrapper .profile-site{
@@ -2116,66 +2050,45 @@ footer .socialFooter{
         /* background-color: blueviolet; */
     }
 
-.profile-site .profile-img{
-    width: 100%;
-    height: 100%;
-    /* background-color: chocolate; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;  
-    position: absolute;
-    opacity: 0.1;
-}
-
-.profile-img .imgProfile{
-    width: 100%;
-    height: 100%;
-    visibility: visible;
-    display: block;
-    background-color: var(--surface);
-    margin-top: 0px;
-    border-radius: 5px;
-    /* border-top-left-radius: 50%;
-    border-top-right-radius: 50%; */
-    /* border-radius: 110px; */
-    /* border: 1px solid var(--primary); */
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.16);
-    position: relative;
-}
-    
-
-    .profile-site .hiContainer{
+    .profile-site .profile-img{
         width: 100%;
         height: 100%;
+        /* background-color: chocolate; */
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;  
+        position: absolute;
+        opacity: 0.1;
+    }
+
+    .profile-img .imgProfile{
+        width: 100%;
+        height: 100%;
+        visibility: visible;
+        display: block;
+        background-color: var(--surface);
+        margin-top: 0px;
+        border-radius: 5px;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.16);
+        position: relative;
+    }
+    
+
+    .profile-site .binner-container{
+        width: 100%;
         /* background-color: red; */
     }
     
-    .hiContainer .greeting{
-        width: 100%;
-        height: 270px;
-        padding-left: 30px;
-        /* background-color: rgb(44, 21, 66); */
-        /* border-left: 3px solid var(--primary); */
-        position: relative;
+    .binner-container .binner-text{
+        padding: 0 5px;
         visibility: visible;
-    
-        &::after{
-            content: '';
-            width: 3px;
-            height: 100%;
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: var(--primary);
-            animation: centerLine 4s linear;
-            visibility: visible;
-            display: none;
-        }
+        position: static;
+        
+    }
+
+    .binner-container .binner-text::after{
+        display: none;
     }
     
     @keyframes centerLine {
@@ -2190,41 +2103,37 @@ footer .socialFooter{
         }
     }
     
-    .greeting p{
-        font-size: 14px;
-        color: var(--primary);
-        font-family: welcome;
-        opacity: 1;
-        visibility: hidden;
-        
-    }
-    .greeting h1{
-        font-size: 20px;
-        font-family: headName;
-        /* color: rgb(20, 20, 20); */
-        visibility: hidden;
-    }
-    
-    .greeting h1 big{
+    .binner-text h1{
         font-size: 25px;
+        font-family: headName;
+        line-height: 45px;
+        text-align: center;
+        visibility: hidden;
+    }
+    
+    .binner-text h1 big{
+        font-size: 1.7rem;
         color: var(--primary);
     }
     
-    .greeting .summery{
+    .binner-text p{
         font-size: 15px;
-        width: 270px;
+        width: 100%;
+        text-align: center;
         /* color: black; */
         visibility: hidden;
     }
 
-    .wrapper .downloads{
+    .binner-text .downloads{
         width: fit-content;
         left: 50%;
         transform: translateX(-50%);
+        bottom: 40px;
     }
     
     .downloads .downloadCv{
         width: fit-content;
+        padding: 0;
 
     }
     
@@ -2237,46 +2146,30 @@ footer .socialFooter{
 
 
 
+/*--------------------- 2- Home Area CSS (End) ---------------------*/
 
 
 
-
-
+/*--------------------- 3- About Area CSS (Start) ---------------------*/
 
 
 
     .container .section-about{
         width: 100%;
-        min-height: auto;
         height: auto;
-        /* background-color: #fafafa; */
         position: relative;
-        padding-bottom: 30px;
-        /* display: none; */
-        z-index: 0;
+        padding: 0;
     }
     .section-about h2{
         width: fit-content;
-        font-size: var(--headfontsize);
-        font-family: poppins;
-        padding: 15px;
-        text-align: center;
-        position: relative;
-        margin: auto;
-    
-        
+        font-size: var(--ph2);
+
     }
     
     .section-about h2::after{
         content: '';
         width: 30%;
-        height: 8px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 0px;
-        background-color: var(--primary);
-        border-radius: 7px;
+        height: 6px;
     }
 
     .section-about .about-container{
@@ -2286,55 +2179,44 @@ footer .socialFooter{
         margin-top: 20px;
         /* background-color: rgb(58, 32, 32); */
         position: static;
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         z-index: 1;
-    
     }
     
+    
+    .about-container .about-image-side{
+        width: 80%;
+        height: 80%;
+        order: 1;
+        /* background-color: brown; */
+        position: static;
+        z-index: 10;
+    }
+
     .about-container .about-text-side{
         width: 100%;
         height: 100%;
-        padding: 20px;
-        /* color: rgb(105, 105, 105); */
+        padding: 15px;
         z-index: 2;
         /* background-color: #fafafa; */
-        display: flex;
         order: 2;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: static;
         
     }
 
-    ul li .item .icon{
+    
+
+    .about-text-side .about-left{
+        order: 1;
+    }
+
+    .about-left ul li .item .icon{
         width: 40px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         /* background-color: red; */
     }
-    .about-container .about-image-side{
-        width: 80%;
-        height: 80%;
-        order: 1;
-        /* background-color: brown; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: static;
     
-        z-index: 10;
-    
-    }
-
-    .about-text-side .about-left{
-        order: 1;
-    }
-
     .about-text-side .about-left h4{
         font-size: 22px;
         padding: 7px 0;
@@ -2344,45 +2226,38 @@ footer .socialFooter{
     }
     .about-text-side .about-right{
         order: 2;
+        margin-top: 30px;
+        padding: 0;
     }
 
+    /*--------------------- 3- About Area CSS (End) ---------------------*/
 
 
-    /* Skills */
+
+
+
+
+
+
+    /*--------------------- 4- Skill Area CSS (Start) ---------------------*/
+
 
     .container .section-skills{
-        width: 100%;
-        min-height: 100%;
-        /* height: auto; */
-        /* background-color: #f0eded; */
         position: static;
-        /* display: flex;
-        justify-content: center;
-        align-items: center;  */
-        /* display: none; */
+        padding-top: 20px;
     }
 
     .section-skills .skills-container{
-        width: 100vw;
+        width: 100%;
         min-height: 100%;
-        /* height: auto; */
-        /* background-color: rgb(233, 138, 138); */
-        /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.144); */
-        position: static;
     }
 
     .skills-header h2{
-        font-size:var(--headfontsize);
+        font-size:var(--ph2);
     }
     .skills-container .skills-list{
         width: 90%;
         min-height: 100%;
-        /* height: auto; */
-        display: flex;
-        /* justify-content: center; */
-        flex-wrap: wrap;
-        margin: 20px auto;
-        /* background-color: brown; */
     }
 
     .skills-list .skill{
@@ -2433,9 +2308,12 @@ footer .socialFooter{
     }
 
 
+/*--------------------- 4- Skill Area CSS (End) ---------------------*/
 
 
-/* Qualification */
+/*--------------------- 5- Education Area CSS (Start) ---------------------*/
+
+
 
     .section-qualification .education-container{
         width: 100%;
@@ -2444,42 +2322,12 @@ footer .socialFooter{
 
     .section-qualification .education-list{
         width: 90%;
-        height: auto;
-        margin: auto;
-        /* border-left: 2px solid var(--secondryColor); */
-        margin-bottom: 30px;
-        /* background-color: yellow; */
+        
     }
 
     .section-qualification .education-list h3{
         font-size: 22px;
-        font-family: roboto, sans-serif;
         font-weight: 500;
-        color: var(--secondryColor);
-    }
-    .education-list .education{
-        width: 90%;
-        height: auto;
-        /* background-color: red; */
-        margin: 10px auto;
-        border-left: 0px solid var(--primary);
-        box-shadow: 0 2px 0px 1px rgba(0, 0, 0, 0.123);
-        border-radius: 8px;
-        background-color: var(--edulist);
-        position: relative;
-        /* padding: 10px 0; */
-        padding-left: 20px;
-
-        &::after{
-            content: '';
-            position: absolute;
-            width: 3px;
-            height: 30%;
-            background-color: var(--primary);
-            left: -1.5px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
     }
 
     .education-list .education h4{
@@ -2487,31 +2335,7 @@ footer .socialFooter{
         
     }
 
-    .education .school{
-        width: 100%;
-        height: auto;
-        /* background-color: red; */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding-right: 10px;
-    }
-
-    .education h6{
-        font-size: 0.8rem;
-        color: var(--secondryColor);
-        font-family: roboto;
-        font-weight: 400;
-        padding-bottom: 5px;
-
-        & i{
-            padding-right: 5px;
-            /* color: black; */
-        }
-    }
-
     .education p{
-        
         font-size: 80%;
         
     }
@@ -2521,86 +2345,33 @@ footer .socialFooter{
     }
     .qualification-list h3{
         font-size: 22px;
-        font-family: roboto, sans-serif;
-        font-weight: 500;
-        color: var(--secondryColor);
-        padding: 10px 15px;
+        
     }
 
-    .section-qualification .qualification-list .qualify{
-        width: 80%;
-        height: auto;
-        margin: auto;
+    .qualification-list .qualify{
         padding-left: 25px;
         padding-bottom: 50px;
-        /* background-color: red; */
-        border-left: 3px solid var(--primary);
-        position: relative;
+        
 
-        & .graduation-cap{
-            position: absolute;
-            width: 35px;
-            height: 35px;
-            background-color: var(--primary);
-            border-radius: 50%;
-            left: -18px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            & i{
-                /* width: 22px; */
-                fill: white;
-                color: white;
-            }
-
-        }
-
-        & h5{
-            font-size: 17px;
-            color: var(--secondryColor);
-            width: fit-content;
-            padding: 5px 0px;
-            /* background-color: #311c1c6b; */
-            border-bottom: 1px solid var(--primary);
-            /* border-radius: 15px; */
-            font-weight: 100;
-            position: relative;
-        }
-
-        & h4{
-            text-align: left;
-            margin: 0;
-            font-size: 20px;
-            font-weight: 300;
-            font-family: roboto, sans-serif;
-            padding-top: 10px;
-            padding-bottom: 20px;
-            color: var(--secondryColor);
-        }
-
-        & p{
-            width: 100%;
-            font-size: 12px;
-            font-family: roboto, sans-serif;
-            font-weight: 200;
-            color: var(--secondryColor);
-        }
     }
 
+/*--------------------- 5- Education Area CSS (End) ---------------------*/
+
+
+
+
+/*--------------------- 6- Project Area CSS (Start) ---------------------*/
 
 
 
     .container .section-projects{
         width: 100vw;
         min-height: 100vh;
-        /* background-color: rgb(33, 48, 58); */
-        padding-bottom: 50px;
-        /* display: none; */
+       
     }
 
-    .project-header h3{
-        font-size: var(--headfontsize);
+    .project-header h2{
+        font-size: var(--ph2);
     }
 
     .project-header p{
@@ -2626,14 +2397,6 @@ footer .socialFooter{
 
     .projects .projectImage, .projectInformation{
         width: 90%;
-        /* height: 50%; */
-        /* opacity: 1; */
-        /* background-color: rgb(46, 46, 16); */
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
         margin: 5px auto;
     }
 
@@ -2650,23 +2413,24 @@ footer .socialFooter{
         width: 100%;
         height: fit-content;
 
-        .info-header{
-            width: fit-content;
-            height: auto;
-            margin: auto;
-            /* background-color: blueviolet; */
-    
-            
-        }
-
-        .info-header h3{
-            padding: 12px 0px;
-            font-size: 23px;
-            font-family: welcome;
-            color: blueviolet;
-        }
+        
     }
 
+    .info .info-header{
+        width: fit-content;
+        height: auto;
+        margin: auto;
+        /* background-color: blueviolet; */
+
+        
+    }
+
+    .info .info-header h3{
+        padding: 12px 0px;
+        font-size: 23px;
+        font-family: welcome;
+        color: blueviolet;
+    }
     .info .info-discription{
         width: 90%;
         height: fit-content;
@@ -2716,7 +2480,10 @@ footer .socialFooter{
     }
     
     
+/*--------------------- 6- Project Area CSS (End) ---------------------*/
 
+
+/*--------------------- 7- Contact Area CSS (Start) ---------------------*/
 
 
     .section-contact .contact-container{
@@ -2724,7 +2491,7 @@ footer .socialFooter{
     }
 
     .contact-header h2{
-        font-size: var(--headfontsize);
+        font-size: var(--ph2);
     }
 
     .form-site form{
@@ -2748,98 +2515,3 @@ footer .socialFooter{
 
 
 
-/* MAgic Border */
-
-
-/* @mixin magic-border($width, $color, $duration, $direction){
-    position:relative;
-      &:before{
-        content:'';
-        position:absolute;
-        width:calc(100% + #{$width * 2});
-        height:calc(100% + #{$width * 2});
-        top:calc(#{$width}/-1);
-        left:calc(#{$width}/-1);
-        background:linear-gradient(to right, $color 0%, $color 100%), linear-gradient(to top, $color 50%, transparent 50%), linear-gradient(to top, $color 50%, transparent 50%), linear-gradient(to right, $color 0%, $color 100%), linear-gradient(to left, $color 0%, $color 100%);
-        background-size:100% $width, $width 200%, $width 200%, 0% $width, 0% $width;
-        background-position:50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
-        background-repeat:no-repeat, no-repeat;
-        transition:transform $duration ease-in-out, background-position $duration ease-in-out, background-size $duration ease-in-out;
-        transform:scaleX(0) rotate(180deg * $direction);
-        transition-delay:$duration*2, $duration, 0s;
-      }
-      &:hover{
-        &:before{
-          background-size:200% $width, $width 400%, $width 400%, 55% $width, 55% $width;
-          background-position:50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
-          transform:scaleX(1) rotate(180deg * $direction);
-          transition-delay:0s, $duration, $duration*2;
-        }
-      }
-  }
-  
-  @mixin magic-border-mask($width, $duration, $background, $direction){
-    position:relative;
-      &:before{
-        content:'';
-        position:absolute;
-        width:calc(100% + #{$width * 2});
-        height:calc(100% + #{$width * 2});
-        top:calc(#{$width}/-1);
-        left:calc(#{$width}/-1);
-        mask:linear-gradient(to right, #000 0%, #000 100%), linear-gradient(to top, #000 50%, transparent 50%), linear-gradient(to top, #000 50%, transparent 50%), linear-gradient(to right, #000 0%, #000 100%), linear-gradient(to left, #000 0%, #000 100%);
-        mask-size:100% $width, $width 200%, $width 200%, 0% $width, 0% $width;
-        mask-position:50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
-        mask-repeat:no-repeat, no-repeat;
-        transition:transform $duration ease-in-out, mask-position $duration ease-in-out, mask-size $duration ease-in-out;
-        transform:scaleX(0) rotate(180deg * $direction);
-        transition-delay:$duration*2, $duration, 0s;
-        background:$background;
-      }
-      &:hover{
-        &:before{
-          mask-size:200% $width, $width 400%, $width 400%, 55% $width, 55% $width;
-          mask-position:50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
-          transform:scaleX(1) rotate(180deg * $direction);
-          transition-delay:0s, $duration, $duration*2;
-        }
-      }
-  }
-  
-  body{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    .wrap{
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      width:450px;
-      a{
-        text-decoration:none;
-        color:#222;
-        padding:20px;
-        background:#efefef;
-        text-transform:uppercase;
-        text-align:center;
-        @include magic-border(2px, blue, 0.3s, 0);
-        font-family:'Oswald';
-        margin:20px;
-        flex-grow:1;
-        cursor:pointer;
-
-
-        &:nth-of-type(2){
-          @include magic-border(4px, #222, 0.2s, 1);
-        }
-
-
-        &:nth-of-type(3){
-          @include magic-border-mask(10px, 0.4s, linear-gradient(to bottom, #40e0d0, #ff8c00, #ff0080), 0);
-          align-self:flex-end;
-        }
-      }
-    }
-  } */
