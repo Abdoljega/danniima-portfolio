@@ -1071,7 +1071,8 @@ ul li .item .icon svg.date path{
 .qualify p{
     width: 100%;
     font-family: roboto, sans-serif;
-    font-weight: 400;
+    font-weight: 300;
+    line-height: 25px;
     color: var(--secondryColor);
 }
 
