@@ -100,8 +100,11 @@ h2::after{
     border-radius: 7px;
 }
 
+h3{
+    font-size: 1.6rem;
+}
 p{
-    font-size: 1.rem;
+    font-size: 1rem;
     font-family: roboto, sans-serif;
 }
 
@@ -748,7 +751,8 @@ ul li .item .icon svg.date path{
 }
 
 .skillDetails .textSk p{
-    font-size: 16px;
+    margin: auto;
+    text-align: center;
     color: rgb(255, 160, 160);
     font-family: welcome;
     padding: 0px 15px;
@@ -760,7 +764,6 @@ ul li .item .icon svg.date path{
     /* text-align: center; */
     padding: 0px 15px;
     padding-top: 15px;
-    font-size: 22px;
     text-align: center;
     color: white;
     visibility: hidden;
@@ -1301,8 +1304,9 @@ ul li .item .icon svg.date path{
 
 .info .info-header h3{
     padding: 12px 0px;
-    font-size: 30px;
+    font-size: 25px;
     font-family: welcome;
+    text-align: center;
     color: var(--primary);
 }
 .projects .projectImage .destop-image-container{
