@@ -2563,29 +2563,9 @@ footer .socialFooter{
     }
     .contact-container .social{
         position: fixed;
-        width: 45px;
-        height: 45px;
     }
 
-    .social .nav_chat i{
-        font-size: 20px;
-    }
-
-    .nav_chat .social_list{
-        height: 120px;
-        top: -120px;
-    }
-
-    .nav_chat .social_list ul li{
-        width: 30px;
-        height: 30px;
-        margin-top: 4px;
-    }
-
-    .nav_chat .social_list ul li i{
-        color: var(--secondryColor);
-        font-size: 20px;
-    }
+    
 }
 
 
