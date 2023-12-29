@@ -76,6 +76,35 @@ input{
     outline: none;
     border: none;
 }
+
+h2{
+    width: fit-content;
+    font-size:var(--h2);
+    text-align: center;
+    font-family: poppins;
+    color: var(--headerColor);
+    padding: 15px;
+    position: relative;
+    margin: auto;
+}
+
+h2::after{
+    content: '';
+    width: 40%;
+    height: 6px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
+    background-color: var(--primary);
+    border-radius: 7px;
+}
+
+p{
+    font-size: 1.rem;
+    font-family: roboto, sans-serif;
+}
+
 main{
     width: 100vw;
     height: 100vh;
@@ -312,7 +341,9 @@ main .menu .toggle-container{
         height: 100%;
     }
 }
-
+.binner-text h1 small{
+    font-size: 27px;
+}
 .binner-text h1{
     padding: 5px 0;
     font-size: 50px;
@@ -327,7 +358,6 @@ main .menu .toggle-container{
 }
 
 .binner-text p{
-    font-size: 15px;
     width: 80%;
     font-family: roboto, sans-serif;
     font-weight: 400;
@@ -355,41 +385,35 @@ main .menu .toggle-container{
     justify-content: center;
     align-items: center;
     /* background-color: var(--primary); */
-    padding: 5px 10px;
     border: 2px solid var(--primary);
     border-radius: 7px;
 }
 
 .downloadCv p{
-    width: auto;
-    font-size: 15px;
+    width: fit-content;
     color: var(--primary);
     padding: 7px 10px;
     font-family: fontF;
+    opacity: 1;
+    z-index: 2;
+    visibility: visible;
     /* position: absolute; */
     /* background-color: green; */
     /* display: none; */
 
 }
 
+.downloads .downloadCv:hover{
+    border: 2px solid white;
+    background-color: var(--primary);
+}
+
 .downloadCv:hover p{
     width: auto;
     left: 0px;
     display: block;
-    color: var(--secondryColor);
+    color: white;
     /* background-color: brown; */
-}
-.downloadCv svg{
-    width: 32px;
-    height: 32px;
-    fill: white;
-    font-size: 25px;
-    /* background-color: rgb(63, 31, 31); */
-    padding: 7px 0;
-    margin-right: 10px;
-    /* padding-right: 10px; */
-    border-radius: 50%;
-    /* position: absolute; */
 }
 
 
@@ -399,7 +423,6 @@ main .menu .toggle-container{
 
 /*--------------------- 3- About Area CSS (Start) ---------------------*/
 
-/* ABOUT */
 
 .container .section-about{
     width: 100%;
@@ -409,29 +432,6 @@ main .menu .toggle-container{
     padding-top: 50px;
 }
 
-.section-about h2{
-    width: fit-content;
-    font-size: var(--h2);
-    font-family: poppins;
-    padding: 15px;
-    text-align: center;
-    position: relative;
-    margin: auto;
-    color: var(--headerColor);
-    
-}
-
-.section-about h2::after{
-    content: '';
-    width: 30%;
-    height: 8px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0px;
-    background-color: var(--primary);
-    border-radius: 7px;
-}
 
 
 .section-about .about-container{
@@ -485,7 +485,6 @@ main .menu .toggle-container{
     font-weight: 600;
 }
 .about-right p{
-    font-size: 17px;
     font-family: roboto, sans-serif;
     font-weight: 400;
     line-height: 30px;
@@ -545,7 +544,6 @@ ul li .item .icon svg.date path{
 }
 
 .about-left ul li .item .details-name p{
-    font-size: 17px;
     font-family: headName;
     line-height: 30px;
     color: var(--secondryColor);
@@ -554,7 +552,7 @@ ul li .item .icon svg.date path{
 
 .item .details-name p small{
     font-family: fontF;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .about-text-side.active{
@@ -569,10 +567,19 @@ ul li .item .icon svg.date path{
     height: 100%;
     /* background-color: brown; */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;    
 
+}
+
+.about-image-side h4{
+    font-size: 32px;
+    font-family: roboto, sans-serif;
+    font-weight: 400;
+    color: var(--primary);
+    padding-top: 30px;
 }
 
 .about-image-side .about-profile{
@@ -581,10 +588,6 @@ ul li .item .icon svg.date path{
     /* transform: translateX(-100%); */
     position: relative;
     z-index: 1;
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
     background-color: rgb(247, 247, 247);
     display: flex;
     justify-content: center;
@@ -652,7 +655,6 @@ ul li .item .icon svg.date path{
 }
 .skills-container .skills-header{
     width: 100%;
-    height: 70px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -664,23 +666,6 @@ ul li .item .icon svg.date path{
 }
 
 
-.skills-header::after{
-    content: '';
-    width: 50px;
-    height: 8px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -12px;
-    background-color: var(--primary);
-    border-radius: 7px;
-}
-.skills-header h2{
-    font-size:var(--h2);
-    text-align: center;
-    font-family: poppins;
-    color: var(--headerColor);
-}
 
 .skills-container .skills-list{
     width: 80%;
@@ -696,18 +681,15 @@ ul li .item .icon svg.date path{
 .skills-list .skill{
     width: 31%;
     /* min-width: 100px; */
-    height: 260px;
+    height: 300px;
     background-color: rgb(255, 255, 255);
     margin: 7px;
     display: block;
     position: relative;
     visibility: hidden; 
     opacity: 0;
-    transform: translateY(80px);
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */    
-    
+    transform: translateY(80px); 
+    padding: 20px;
 }
 
 .skills-list .skill::after{
@@ -744,15 +726,14 @@ ul li .item .icon svg.date path{
 
 .skills-list .skill .skillDetails{
     position: absolute;
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 90%;
     background-color: rgba(24, 24, 24, 0.747);
     transition: 1s;
-    /* bottom: 0; */
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -761,19 +742,16 @@ ul li .item .icon svg.date path{
 }
 
 .skill .skillDetails .textSk{
-    width: 90%;
-    height: 30%;
-    
+    width: fit-content;
+    height: auto;
     /* background-color: blueviolet; */
 }
 
 .skillDetails .textSk p{
     font-size: 16px;
-    /* padding: 25px; */
-    color: rgb(233, 72, 72);
+    color: rgb(255, 160, 160);
     font-family: welcome;
     padding: 0px 15px;
-    /* text-align: center; */
     visibility: hidden;
     opacity: 0;
 }
@@ -783,6 +761,7 @@ ul li .item .icon svg.date path{
     padding: 0px 15px;
     padding-top: 15px;
     font-size: 22px;
+    text-align: center;
     color: white;
     visibility: hidden;
     font-family: poppins;opacity: 0;
@@ -923,14 +902,6 @@ ul li .item .icon svg.date path{
 
 }
 
-.container .section-qualification h2{
-    width: fit-content;
-    font-size: var(--h2);
-    color: var(--secondryColor);
-    margin: auto;
-    padding: 10px 0;
-    font-family: roboto, sans-serif;
-}
 
 .section-qualification .education-container{
     width: 90%;
@@ -947,82 +918,81 @@ ul li .item .icon svg.date path{
         /* border-left: 2px solid var(--secondryColor); */
         margin-bottom: 30px;
         /* background-color: yellow; */
-    }
+}
 
-    .section-qualification .education-list h3{
-        font-size: 22px;
-        font-family: roboto, sans-serif;
-        font-weight: 500;
-        color: var(--secondryColor);
-    }
-    .education-list .education{
-        width: 90%;
-        height: auto;
-        /* background-color: red; */
-        margin: 10px auto;
-        /* border-left: 2px solid var(--primary); */
-        box-shadow: 0 2px 0px 1px rgba(0, 0, 0, 0.123);
-        border-radius: 8px;
-        background-color: var(--inputColr);
-        position: relative;
-        /* padding: 10px 0; */
-        padding-left: 20px;
+.section-qualification .education-list h3{
+    font-size: 22px;
+    font-family: roboto, sans-serif;
+    font-weight: 500;
+    color: var(--secondryColor);
+}
+.education-list .education{
+    width: 90%;
+    height: auto;
+    /* background-color: red; */
+    margin: 10px auto;
+    /* border-left: 2px solid var(--primary); */
+    box-shadow: 0 2px 0px 1px rgba(0, 0, 0, 0.123);
+    border-radius: 8px;
+    background-color: var(--inputColr);
+    position: relative;
+    /* padding: 10px 0; */
+    padding-left: 20px;
 
-        
-    }
+    
+}
 
-    .education-list .education::after{
-        content: '';
-        position: absolute;
-        width: 3px;
-        height: 40%;
-        background-color: var(--primary);
-        left: -1.5px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
+.education-list .education::after{
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 40%;
+    background-color: var(--primary);
+    left: -1.5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
 
-    .education-list .education h4{
-        font-size: 1.4rem;
-        color: var(--secondryColor);
-        font-family: roboto, sans-serif;
-        font-weight: 300;
-        padding: 15px 0;
-    }
+.education-list .education h4{
+    font-size: 1.4rem;
+    color: var(--secondryColor);
+    font-family: roboto, sans-serif;
+    font-weight: 300;
+    padding: 15px 0;
+}
 
-    .education .school{
-        width: 100%;
-        height: auto;
-        /* background-color: red; */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding-right: 10px;
-    }
+.education .school{
+    width: 100%;
+    height: auto;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 10px;
+}
 
-    .education h6{
-        font-size: 0.8rem;
-        color: var(--secondryColor);
-        font-family: roboto;
-        font-weight: 400;
-        padding-bottom: 5px;
+.education h6{
+    font-size: 0.8rem;
+    color: var(--secondryColor);
+    font-family: roboto;
+    font-weight: 400;
+    padding-bottom: 5px;
 
-        
-    }
-    .education h6 i{
-        padding-right: 5px;
-        /* color: black; */
-    }
-    .education p{
-        padding: 15px 0;
-        padding-right: 7px;
-        font-size: 14px;
-        color: var(--secondryColor);
-        font-family: roboto;
-        font-weight: 300;
-        line-height: 1.2;
-    }
+    
+}
+.education h6 i{
+    padding-right: 5px;
+    /* color: black; */
+}
+.education p{
+    padding: 15px 0;
+    padding-right: 7px;
+    color: var(--secondryColor);
+    font-family: roboto;
+    font-weight: 300;
+    line-height: 1.2;
+}
 
 
 
@@ -1097,7 +1067,6 @@ ul li .item .icon svg.date path{
 
 .qualify p{
     width: 100%;
-    font-size: 12px;
     font-family: roboto, sans-serif;
     font-weight: 400;
     color: var(--secondryColor);
@@ -1133,36 +1102,14 @@ ul li .item .icon svg.date path{
 
 }
 
-.section-projects .project-header::after{
-    content: '';
-    width: 100px;
-    height: 8px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -20px;
-    background-color: var(--primary);
-    border-radius: 7px;
-}
 
-.project-header h2{
-    font-size: var(--h2);
-    font-family: poppins;
-    padding: 7px 0;
-    margin: 0;
-    text-align: center;
-    color: var(--headerColor);
-
-    
-}
-
-.project-header p{
+.section-projects p{
     width: 45%;
     text-align: center;
     margin: 0 auto;
-    padding: 4px 20px;
+    padding: 10px 0px;
     font-size: 19px;
-    font-family: fontF;
+    font-family: roboto, sans-serif;
     color: var(--secondryColor);
 }
 
@@ -1255,23 +1202,16 @@ ul li .item .icon svg.date path{
     align-items: center;
     position: relative;
     
+}
 
-    
-
-    
-    .info-discription p{
-        font-size: 17px;
-        font-family: welcome;
-        padding: 10px 5px;
-        text-align: center;
-        color: var(--secondryColor);
-    }
-    
-
-    
-
-
-
+.projectInformation .info-discription p{
+    width: fit-content;
+    font-size: 17px;
+    font-family: welcome;
+    padding: 10px 5px;
+    text-align: center;
+    color: var(--secondryColor);
+    margin: 0;
 }
 
 .projectInformation .info{
@@ -1442,27 +1382,6 @@ ul li .item .icon svg.date path{
     
 }
 
-.contact-header::after{
-    content: '';
-    width: 70px;
-    height: 8px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -12px;
-    background-color: var(--primary);
-    border-radius: 7px;
-}
-
-.contact-header h2{
-    width: fit-content;
-    text-align: center;
-    padding: 20px 0;
-    margin: auto;
-    font-size: var(--h2);
-    font-family: fontF;
-    color: var(--headerColor);
-}
 
 .contact-container .form-site{
     width: 100%;
@@ -1492,13 +1411,13 @@ ul li .item .icon svg.date path{
 }
 
 
-.form-site form .field input{
+.form-site form input{
     padding: 15px 20px;
     width: 100%;
     margin: 10px 0;
     font-size: 16px;
     border-radius: 7px;
-    color: white;
+    color: var(--secondryColor);
     background-color: var(--inputColr);
     /* color: rgb(189, 187, 187); */
 }
@@ -1513,6 +1432,7 @@ ul li .item .icon svg.date path{
     outline: none;
     border: 0;
     font-size: 16px;
+    color: var(--secondryColor);
     background-color: var(--inputColr)
 }
 
@@ -1522,7 +1442,9 @@ ul li .item .icon svg.date path{
     height: 50px;
 }
 .form-site form .sbm input[type="submit"]{
-    padding: 15px 25px;
+    padding: 15px 30px;
+    width: fit-content;
+    margin: auto;
     margin-top: 20px;
     float: right;
     border-radius: 5px;
@@ -1774,25 +1696,41 @@ footer .socialFooter{
 /*--------------------- 8- Footer Area CSS (End) ---------------------*/
 
 
+@media screen and (max-width : 1000px){
+    .skills-container .skills-list{
+        width: 95%;
+        min-height: 100%;
+        /* background-color: red; */
+    }
 
+    .skills-list .skill{
+        width: 48%;
+        height: 300px;
+        visibility: hidden;
+        transform: translateY(80px);
+        opacity: 0;
+    }
+}
 
 
 @media screen and (max-width : 780px){
-    
+    h2{
+        font-size:var(--ph2);
+    }
     main{
         width: 100%;
         height: 100%;
         position: fixed;
     }
 
-    main .menu {
+    .container .menu {
         position: static;
     }
 
     .menu .menu-logo-site{
         width: 80px;
     }
-    main .menu::before{
+    .container .menu::before{
         content: '';
         position: absolute;
         z-index: -1;
@@ -1805,7 +1743,7 @@ footer .socialFooter{
     }
 
     
-    main .menu .toggle-container{
+    .container .menu .toggle-container{
         width: 25px;
         height: 100%;
         margin-right: 20px;
@@ -1816,7 +1754,7 @@ footer .socialFooter{
         /* background-color: rgb(223, 99, 99); */
     }
 
-    main .menu .toggle{
+    .container .menu .toggle{
         width: 100%;
         height: 5px;
         position: relative;
@@ -1824,7 +1762,7 @@ footer .socialFooter{
         animation: toggleCenter 1s;
     }
 
-    main .menu .toggle::after{
+    .container .menu .toggle::after{
         content: '';
         width: 100%;
         height: 5px;
@@ -1835,7 +1773,7 @@ footer .socialFooter{
         animation: toggleAnimation 1s;
     }
 
-    main .menu .toggle::before{
+    .container .menu .toggle::before{
         content: '';
         width: 100%;
         height: 5px;
@@ -1846,7 +1784,7 @@ footer .socialFooter{
         animation: togglebumAnimation 1s;
     }
 
-    main .menu .toggle.active{
+    .container .menu .toggle.active{
         width: 100%;
         height: 0px;
         position: relative;
@@ -1857,7 +1795,7 @@ footer .socialFooter{
         animation: toggleCenterActive 1s;
     }
 
-    main .menu .toggle.active::after{
+    .container .menu .toggle.active::after{
         content: '';
         width: 100%;
         height: 5px;
@@ -1870,7 +1808,7 @@ footer .socialFooter{
         animation: toggleAnimationActive 1s;
     }
     
-    main .menu .toggle.active::before{
+    .container .menu .toggle.active::before{
         content: '';
         width: 100%;
         height: 5px;
@@ -1885,7 +1823,7 @@ footer .socialFooter{
     }
 
 
-    main .menu .menu-site{
+    .container .menu .menu-site{
         position: absolute;
         right: 0;
         width: 0px;
@@ -1894,12 +1832,12 @@ footer .socialFooter{
         bottom: 0;
         display: flex;
         flex-direction: column;
-        z-index: 50;
+        z-index: 200;
         transition: 1s;
         margin: 0;
     }
 
-    main .menu .menu-site::after{
+    .container .menu .menu-site::after{
         content: '';
         position: absolute;
         width: 0%;
@@ -1909,16 +1847,17 @@ footer .socialFooter{
         transition: 1s;
     }
 
-    main .menu .menu-site.active{
-        width: 50%;
+    .container .menu .menu-site.active{
+        width: 200px;
         transition: 1s;
-        position: absolute;
+        position: fixed;
         margin: 0;
+        background-color: black;
         z-index: 100;
 
     }
 
-    main .menu .menu-site.active::after{
+    .container .menu .menu-site.active::after{
         content: '';
         position: absolute;
         width: 100%;
@@ -1927,7 +1866,7 @@ footer .socialFooter{
         left: -100%;
     }
    
-    main .menu .menu-site .nav_menu{
+    .container .menu .menu-site .nav_menu{
         width: 100%;
         height: 60px;
         visibility: hidden;
@@ -1939,7 +1878,7 @@ footer .socialFooter{
         align-items: center;
         justify-content: flex-start;
     }
-    main .menu .menu-site .nav_menu.show{
+    .container .menu .menu-site .nav_menu.show{
         opacity: 1;
         visibility: visible;
         transform: translateX(0px);
@@ -2029,6 +1968,7 @@ footer .socialFooter{
 
     main .container{
         width: 100%;
+        position: relative;
     }
 
     
@@ -2160,17 +2100,7 @@ footer .socialFooter{
         position: relative;
         padding: 0;
     }
-    .section-about h2{
-        width: fit-content;
-        font-size: var(--ph2);
-
-    }
     
-    .section-about h2::after{
-        content: '';
-        width: 30%;
-        height: 6px;
-    }
 
     .section-about .about-container{
         width: 100%;
@@ -2185,18 +2115,32 @@ footer .socialFooter{
     
     
     .about-container .about-image-side{
-        width: 80%;
-        height: 80%;
+        width: 100%;
+        height: 100%;
         order: 1;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
         /* background-color: brown; */
         position: static;
         z-index: 10;
+        padding: 0 10px;
+    }
+
+    .about-image-side .about-profile{
+        width: 85%;
+        margin: auto;
+    }
+
+    .about-image-side h4{
+        font-size: 23px;
+        padding-top: 35px;
     }
 
     .about-container .about-text-side{
         width: 100%;
         height: 100%;
-        padding: 15px;
+        padding: 0 15px;
         z-index: 2;
         /* background-color: #fafafa; */
         order: 2;
@@ -2207,6 +2151,7 @@ footer .socialFooter{
 
     .about-text-side .about-left{
         order: 1;
+        padding: 5px ;
     }
 
     .about-left ul li .item .icon{
@@ -2216,14 +2161,7 @@ footer .socialFooter{
         align-items: center;
         /* background-color: red; */
     }
-    
-    .about-text-side .about-left h4{
-        font-size: 22px;
-        padding: 7px 0;
-        font-family: poppins;
-        color: var(--primary);
 
-    }
     .about-text-side .about-right{
         order: 2;
         margin-top: 30px;
@@ -2252,9 +2190,6 @@ footer .socialFooter{
         min-height: 100%;
     }
 
-    .skills-header h2{
-        font-size:var(--ph2);
-    }
     .skills-container .skills-list{
         width: 90%;
         min-height: 100%;
@@ -2370,17 +2305,13 @@ footer .socialFooter{
        
     }
 
-    .project-header h2{
-        font-size: var(--ph2);
-    }
 
-    .project-header p{
+    .section-projects p{
         width: 100%;
         text-align: center;
         margin: 0 auto;
-        padding: 4px 15px;
-        font-size: 19px;
-        font-family: fontF;
+        padding: 8px 20px;
+        font-size: 16px;
     }
 
 
@@ -2438,11 +2369,13 @@ footer .socialFooter{
         margin: auto;
     }
     .info-discription p{
+        width: fit-content;
         font-size: 17px;
         font-family: welcome;
         padding: 0 5px;
         text-align: center;
         height: auto;
+        margin: 0;
     }
 
     .projects .projectImage .destop-image-container{
@@ -2490,14 +2423,21 @@ footer .socialFooter{
         width: 90%;
     }
 
-    .contact-header h2{
-        font-size: var(--ph2);
-    }
 
     .form-site form{
         width: 100%;
     }
 
+    .form-site form .sbm input[type="submit"]{
+        padding: 12px 0px;
+        width: 100%;
+        margin: auto;
+        margin-top: 20px;
+        float: right;
+        border-radius: 5px;
+        background-color: blueviolet;
+        color: white;
+    }
     .contact-container .social{
         display: none;
     }
