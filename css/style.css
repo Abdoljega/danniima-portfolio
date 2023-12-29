@@ -1852,7 +1852,7 @@ footer .socialFooter{
         transition: 1s;
         position: fixed;
         margin: 0;
-        background-color: black;
+        background-color: var(--primaryColor);
         z-index: 100;
 
     }
