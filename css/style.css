@@ -149,6 +149,7 @@ main .container{
     /* margin-top: 60px; */
     overflow-x: hidden;
     background-color: var(--background);
+    position: relative;
     
 }
 
@@ -596,6 +597,7 @@ ul li .item .icon svg.date path{
     display: flex;
     justify-content: center;
     border-radius: 5px;
+    visibility: hidden;
     /* border: 5px solid white; */
 
 
@@ -623,7 +625,8 @@ ul li .item .icon svg.date path{
     border-bottom-left-radius: 50%; */
 }
 .about-image-side .about-profile.active{
-    animation: fadeInLeft 0.7s;
+    animation: fadeInLeft 1s;
+    visibility: visible;
 }
 
 
@@ -1487,16 +1490,16 @@ ul li .item .icon svg.date path{
     /* background-color: rgb(139, 11, 11); */
     mix-blend-mode: difference;
 }
-.contact-container .social{
+.container .social{
     width: 60px;
     height: 60px;
     /* background-color: var(--primaryColor); */
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    bottom: 6%;
-    right: 6%;
+    bottom: 60px;
+    right: 80px;
     z-index: 100;
     box-shadow: 0px 0 15px 1px rgba(0, 0, 0, 0.11);
     border-radius: 50%;
@@ -1509,8 +1512,8 @@ ul li .item .icon svg.date path{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    z-index: 2;
     background-color: var(--primaryColor);
 }
 
@@ -1518,6 +1521,89 @@ ul li .item .icon svg.date path{
 .social .nav_chat i{
     font-size: 25px;
     color: var(--secondryColor);
+}
+.social .nav_socials{
+    width: 50%;
+    height: 50%;
+    /* background-color: rgb(255, 0, 0); */
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    transition: 1s;
+}
+.social:hover .nav_socials{
+    width: 240%;
+    height: 240%;
+    /* background-color: rgb(255, 0, 0); */
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    animation: socialAnimation 1s linear;
+}
+
+@keyframes socialAnimation {
+    0%{
+        width: 50%;
+        height: 50%;
+    }
+
+    70%{
+        width: 240%;
+        height: 240%;
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+
+}
+.nav_socials .social_links{
+    width: 30px;
+    height: 30px;
+    /* background-color: #1d1b1b; */
+    position: absolute;
+}
+.nav_socials .fb_link{
+    left: 50%;
+    transform: translateX(-50%);
+}
+.nav_socials .social_links p{
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--secondryColor);
+    font-size: 9px;
+    display: none;
+
+}
+
+.social_links:hover p{
+    display: block;
+
+}
+
+.nav_socials .wh_link{
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav_socials .x_link{
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav_socials .ins_link{
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav_socials img{
+    width: 30px;
 }
 
 .nav_chat .social_list{
@@ -2081,7 +2167,71 @@ footer .socialFooter{
 
     
 
+    .container .social{
+        bottom: 20px;
+        right: 20px;
+    }
 
+    .social .nav_socials{
+        width: 30px;
+        height: calc(40px * 4);
+        /* background-color: red; */
+        border-radius: 0;
+        top: calc(-40px * 4);
+        display: none;
+        
+    }
+
+    .social:hover .nav_socials{
+        width: 30px;
+        height: calc(40px * 4);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        animation: none;
+        border-radius: 0;
+    }
+    .social .nav_socials .social_links{
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(30px);
+        transition: 100ms;
+    }
+    .social:hover .nav_socials .social_links{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px);
+        transition: 100ms;
+        position: relative;
+        
+        left: 0;
+        top: 0;
+    }
+
+    .social:hover .nav_socials .social_links:nth-child(4){
+        transition-delay: 100ms;
+    }
+    .social:hover .nav_socials .social_links:nth-child(3){
+        transition-delay: 200ms;
+    }
+    .social:hover .nav_socials .social_links:nth-child(2){
+        transition-delay: 300ms;
+    }
+    .social:hover .nav_socials .social_links:nth-child(1){
+        transition-delay: 400ms;
+    }
+    
+
+    .nav_socials .social_links p{
+        left: width;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 
 
     .profile-img .imgProfile{
