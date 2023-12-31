@@ -1377,7 +1377,7 @@ ul li .item .icon svg.date path {
 }
 
 .section-projects .projects:last-child .destop-image-container .destop {
-    background-color: brown;
+    /* background-color: brown; */
     float: right;
 }
 
@@ -1405,6 +1405,7 @@ ul li .item .icon svg.date path {
     padding: 0;
     margin: 0;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 
@@ -2721,17 +2722,13 @@ footer .socialFooter {
     }
 
     .section-projects .projects:last-child .destop-image-container .destop {
-        background-color: brown;
+        /* background-color: brown; */
         float: right;
     }
 
     .section-projects .projects:last-child .destop-image-container .phone {
-        background-color: brown;
+        /* background-color: brown; */
         left: 0;
-    }
-
-    .section-projects .projects:first-child {
-        background-color: rgb(94, 60, 60);
     }
 
     .projects .projectImage,
@@ -2762,12 +2759,14 @@ footer .socialFooter {
     .destop-image-container .destop {
         width: 90%;
         height: auto;
+        border: 2px solid white;
         /* display: none; */
     }
 
     .destop-image-container .phone {
         width: 30%;
         right: 0;
+        border: 2px solid white;
     }
 
     .projects .projectInformation {
