@@ -352,9 +352,14 @@ main .menu .toggle-container {
     }
 }
 
-.binner-text h1 small {
-    font-size: 27px;
+.binner-text h3 {
+    width: fit-content;
+    font-size: 25px;
+    font-family: headName;
+    color: var(--secondryColor);
+    visibility: hidden;
 }
+
 
 .binner-text h1 {
     padding: 5px 0;
@@ -2420,7 +2425,13 @@ footer .socialFooter {
             height: 100%;
         }
     }
-
+    .binner-text h3{
+        width: fit-content;
+        font-size: 25px;
+        color: var(--secondryColor);
+        text-align: center;
+        margin: auto;
+    }
     .binner-text h1 {
         font-size: 25px;
         font-family: headName;

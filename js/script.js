@@ -17,6 +17,7 @@ if(window.innerWidth > '780'){
 }
 sr.reveal('#nav_welcome', {delay : 1000})
 sr.reveal('#nav_name', {delay : 700})
+sr.reveal('.hi', {delay : 800})
 sr.reveal('.summery', {delay : 400})
 sr.reveal('.downloadCv', {delay : 200})
 // sr.reveal('.about-profile', {delay : 200})
@@ -48,7 +49,7 @@ let left_Nav = document.querySelectorAll('.nav_left')
 let right_Nav = document.querySelectorAll('.nav_right')
 let projects = document.querySelectorAll('.projects')
 let skills = document.querySelectorAll('.skill, input')
-// let input = document.querySelectorAll('input')
+// let h3 = document.querySelector('.hi')
 const { scrollTop } = document.documentElement
 
 
@@ -102,6 +103,8 @@ skills.forEach(skill=>{
 observer.observe(aboutProfile)
 observer.observe(textarea)
 observer.observe(aboutLeft)
+// observer.observe(h3)
+
 // observer.observe(aboutRight)
 
 
