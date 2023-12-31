@@ -609,8 +609,8 @@ ul li .item .icon svg.date path {
     position: relative;
     z-index: 1;
     background-color: rgb(247, 247, 247);
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     border-radius: 5px;
     visibility: hidden;
     /* border: 5px solid white; */
@@ -1366,8 +1366,8 @@ ul li .item .icon svg.date path {
 .destop-image-container .destop {
     width: 90%;
     height: auto;
-    /* background-color: coral; */
-    border: 5px solid white;
+    background-color: transparent;
+    /* border: 5px solid white; */
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     margin: 0;
@@ -1381,14 +1381,14 @@ ul li .item .icon svg.date path {
 .destop-image-container .phone {
     width: 30%;
     height: auto;
-    /* background-color: black; */
+    background-color: transparent;
     position: absolute;
     right: -20px;
     bottom: -20px;
-    border: 3px solid white;
+    /* border: 3px solid white; */
     border-radius: 5px;
     padding: 0;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.6) 0px 2px 8px -1px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .projects:last-child .destop-image-container .phone {
@@ -1398,9 +1398,10 @@ ul li .item .icon svg.date path {
 .destop img,
 .phone img {
     width: 100%;
-    height: fit-content;
-    padding: 0;
-    margin: 0;
+    height: 100%;
+    /* padding: 0;
+    margin: 0; */
+    border: 3px solid white;
     object-fit: cover;
     border-radius: 5px;
 }
@@ -2222,6 +2223,10 @@ footer .socialFooter {
         transition-delay: 500ms;
     }
 
+    .menu-site .nav_menu:nth-child(7).show {
+        transition: 1s;
+        transition-delay: 600ms;
+    }
     .menu-site .nav_menu a,
     .menu-site .nav_menu.modeContainer p {
         width: 80px;
