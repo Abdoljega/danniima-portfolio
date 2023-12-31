@@ -1318,8 +1318,6 @@ ul li .item .icon svg.date path {
     display: flex;
     /* justify-content: space-around; */
     align-items: center;
-
-
 }
 
 .info-github a img {
@@ -1369,7 +1367,7 @@ ul li .item .icon svg.date path {
     width: 90%;
     height: auto;
     /* background-color: coral; */
-    border: 7px solid white;
+    border: 5px solid white;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     margin: 0;
@@ -1377,7 +1375,6 @@ ul li .item .icon svg.date path {
 }
 
 .section-projects .projects:last-child .destop-image-container .destop {
-    /* background-color: brown; */
     float: right;
 }
 
@@ -2356,7 +2353,7 @@ footer .socialFooter {
 
     .container .wrapper {
         width: 100%;
-        height: calc(100vh - 60px);
+        height: calc(100% - 60px);
         margin: auto;
         position: relative;
         padding: 0;
