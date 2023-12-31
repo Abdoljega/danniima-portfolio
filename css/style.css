@@ -2761,14 +2761,12 @@ footer .socialFooter {
     .destop-image-container .destop {
         width: 90%;
         height: auto;
-        border: 2px solid white;
         /* display: none; */
     }
 
     .destop-image-container .phone {
         width: 30%;
         right: 0;
-        border: 2px solid white;
     }
 
     .projects .projectInformation {
