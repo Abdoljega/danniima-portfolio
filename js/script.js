@@ -40,17 +40,18 @@ let container = document.querySelector('.container')
 let social = document.querySelector('.social')
 // let aboutRight = document.querySelector('.about-right')
 let aboutLeft = document.querySelector('.about-text-side')
-let projectImage = document.querySelectorAll('.destop-image-container')
 let projectInformation = document.querySelectorAll('.info')
 let leftSocial = document.querySelector('.socialLeft')
 let aboutProfile = document.querySelector('.about-profile')
 let textarea = document.querySelector('textarea')
-let left_Nav = document.querySelectorAll('.nav_left')
-let right_Nav = document.querySelectorAll('.nav_right')
 let projects = document.querySelectorAll('.projects')
 let skills = document.querySelectorAll('.skill, input')
 // let h3 = document.querySelector('.hi')
 const { scrollTop } = document.documentElement
+
+
+
+
 
 
 // container.addEventListener('scroll', e=>{
@@ -88,13 +89,20 @@ let observer = new IntersectionObserver(entreis =>{
     })
 })
 
-right_Nav.forEach(rightBox=>{
+// PROJECT SCROLL ANIMATIONS
+
+let info = document.querySelectorAll('.info')
+let projectImage = document.querySelectorAll('.destop-image-container')
+
+projectImage.forEach(rightBox=>{
     observer.observe(rightBox)
 })
 
-left_Nav.forEach(leftBox=>{
+info.forEach(leftBox=>{
     observer.observe(leftBox)
 })
+
+
 
 skills.forEach(skill=>{
     observer.observe(skill)

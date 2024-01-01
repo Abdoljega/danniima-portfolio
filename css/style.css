@@ -877,20 +877,6 @@ ul li .item .icon svg.date path {
     transition-delay: 600ms;
 }
 
-@keyframes skillAnimation {
-    0% {
-        opacity: 0.5;
-        visibility: hidden;
-        transform: translateY(100px);
-    }
-
-    100% {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0px);
-    }
-}
-
 .skill .img-skill {
     width: 100%;
     height: 100%;
@@ -914,7 +900,6 @@ ul li .item .icon svg.date path {
 .skill .skill-body {
     width: fit-content;
     padding: 10px;
-    /* display: none; */
 }
 
 .skill-body h3 {
@@ -928,9 +913,6 @@ ul li .item .icon svg.date path {
 
 
 /*--------------------- 5- Education Area CSS (Start) ---------------------*/
-
-/* Education Container */
-
 
 
 .container .section-qualification {
@@ -954,9 +936,7 @@ ul li .item .icon svg.date path {
     width: 50%;
     height: auto;
     margin: auto;
-    /* border-left: 2px solid var(--secondryColor); */
     margin-bottom: 30px;
-    /* background-color: yellow; */
 }
 
 .section-qualification .education-list h3 {
@@ -1157,85 +1137,43 @@ ul li .item .icon svg.date path {
     color: var(--secondryColor);
 }
 
-.section-projects .projects {
+.section-projects .projects_list{
+    width: 100%;
+}
+.section-projects .projects_list .projects {
     width: 100%;
     height: fit-content;
-    /* background-color: chartreuse; */
     margin-top: 100px;
     display: flex;
-    /* visibility: hidden; */
 }
 
 
-@keyframes projectAnimetion {
-    0% {
-        visibility: hidden;
-        opacity: 0;
-        margin-top: 100px;
-    }
 
-    70% {
-        visibility: visible;
-        opacity: 0.5;
-        margin-top: 20px;
-    }
-
-    100% {
-        visibility: visible;
-        opacity: 1;
-        margin-top: 0;
-    }
-
-}
-
-.projects .nav_right {
+.projects:nth-child(1) .projectImage .destop-image-container,
+.projects:nth-child(2) .projectInformation .info{
     visibility: hidden;
+    opacity: 0;
+    transform: translateX(-200px);
 }
 
-.projects .nav_right.active {
-    animation: rightAnimation 0.4s linear;
-    visibility: visible;
-}
-
-.projects .nav_left {
+.projects:nth-child(2) .projectImage .destop-image-container,
+.projects:nth-child(1) .projectInformation .info{
     visibility: hidden;
+    opacity: 0;
+    transform: translateX(200px);
 }
 
-.projects .nav_left.active {
-    animation: leftAnimation 0.4s linear;
+.projects:nth-child(1) .projectImage .destop-image-container.active,
+.projects:nth-child(2) .projectInformation .info.active,
+.projects:nth-child(2) .projectImage .destop-image-container.active,
+.projects:nth-child(1) .projectInformation .info.active{
     visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+    transition: 700ms;
 }
 
-@keyframes leftAnimation {
-    0% {
-        visibility: hidden;
-        opacity: 0;
-        transform: translateX(-100px);
-    }
 
-    100% {
-        visibility: visible;
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-}
-
-@keyframes rightAnimation {
-    0% {
-        visibility: hidden;
-        opacity: 0;
-        transform: translateX(200px);
-    }
-
-
-    to {
-        visibility: visible;
-        opacity: 1;
-        transform: none;
-    }
-
-}
 
 .projects .projectImage,
 .projects .projectInformation {
@@ -2600,7 +2538,6 @@ footer .socialFooter {
         visibility: visible;
         transform: translateY(0);
         transition: 0.3s ease-in;
-        /* transition-delay: 200ms; */
     }
 
     .skills-list .skill:nth-child(1).active {
@@ -2684,8 +2621,6 @@ footer .socialFooter {
     .qualification-list .qualify {
         padding-left: 25px;
         padding-bottom: 50px;
-
-
     }
 
     /*--------------------- 5- Education Area CSS (End) ---------------------*/
@@ -2713,23 +2648,20 @@ footer .socialFooter {
     }
 
 
-    .section-projects .projects {
+    .section-projects .projects_list .projects {
         width: 100%;
         height: auto;
-        /* background-color: chartreuse; */
-        margin-bottom: 50px;
+        margin-bottom: 0px;
+        margin-top: 50px;
         display: flex;
         flex-direction: column;
-        /* visibility: hidden; */
     }
 
     .section-projects .projects:last-child .destop-image-container .destop {
-        /* background-color: brown; */
         float: right;
     }
 
     .section-projects .projects:last-child .destop-image-container .phone {
-        /* background-color: brown; */
         left: 0;
     }
 
@@ -2751,17 +2683,34 @@ footer .socialFooter {
         position: relative;
         width: 90%;
         height: auto;
-
-        /* display: block; */
-        /* background-color: red; */
-
     }
 
+    .projects:nth-child(1) .projectImage .destop-image-container,
+    .projects:nth-child(2) .projectImage .destop-image-container{
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(-200px);
+    }
 
+    .projects:nth-child(2) .projectInformation .info,
+    .projects:nth-child(1) .projectInformation .info{
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(200px);
+    }
+
+    .projects:nth-child(1) .projectImage .destop-image-container.active,
+    .projects:nth-child(2) .projectInformation .info.active,
+    .projects:nth-child(2) .projectImage .destop-image-container.active,
+    .projects:nth-child(1) .projectInformation .info.active{
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+        transition: 700ms;
+    }
     .destop-image-container .destop {
         width: 90%;
         height: auto;
-        /* display: none; */
     }
 
     .destop-image-container .phone {
@@ -2785,16 +2734,13 @@ footer .socialFooter {
         width: fit-content;
         height: auto;
         margin: auto;
-        /* background-color: blueviolet; */
-
-
     }
 
     .info .info-header h3 {
         padding: 12px 0px;
         font-size: 23px;
         font-family: welcome;
-        color: blueviolet;
+        color: var(--primary);
     }
 
     .info .info-discription {
