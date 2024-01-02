@@ -119,7 +119,7 @@ form.addEventListener('submit', e=>{
     console.log('Hello')
     Email.send({
         SecureToken : "2cd4383c-fe29-45ba-9e9b-2fc1de44a17b",
-        To : 'abdoljega@gmail.com',
+        To : 'abdoljega01@yahoo.com',
         From : email.value,
         Subject : fullName.value,
         Body : body.value
