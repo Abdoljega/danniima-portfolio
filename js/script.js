@@ -51,69 +51,34 @@ const { scrollTop } = document.documentElement
 
 
 
-
-
-
-// container.addEventListener('scroll', e=>{
-//     // console.log(container.scrollTop)
-//     // console.log(container.scrollTop)
-//     console.log(container.scrollTop)
-
-//     // if(container.scrollTop > 1600){
-//     //     // console.log(projects)
-//     //     projectInformation[0].classList.add('active')
-//     //     right_Nav[0].classList.add('active')
-//     // }
-//     // if(container.scrollTop >= 2300){
-//     //     // console.log(projects)
-//     //     projectInformation[1].classList.add('active')
-//     //     right_Nav[1].classList.add('active')
-//     // }
-    
-
         
     
 
 // })
 
 
-let observer = new IntersectionObserver(entreis =>{
-    entreis.forEach(entry =>{
+let observer = new IntersectionObserver((entries, appearScroll) =>{
+    entries.forEach(entry =>{
         if(entry.isIntersecting){
             entry.target.classList.add('active')
-        } 
-        // else {
-        //     entry.target.classList.remove('active')
 
-        // }
+        } 
     })
-})
+}, {threshold: .3})
 
 // PROJECT SCROLL ANIMATIONS
 
-let info = document.querySelectorAll('.info')
+let info = document.querySelectorAll('.fade')
 let projectImage = document.querySelectorAll('.destop-image-container')
 
-projectImage.forEach(rightBox=>{
-    observer.observe(rightBox)
-})
+// projectImage.forEach(rightBox=>{
+//     observer.observe(rightBox)
+// })
 
 info.forEach(leftBox=>{
     observer.observe(leftBox)
 })
 
-
-
-skills.forEach(skill=>{
-    observer.observe(skill)
-})
-
-observer.observe(aboutProfile)
-observer.observe(textarea)
-observer.observe(aboutLeft)
-// observer.observe(h3)
-
-// observer.observe(aboutRight)
 
 
 
@@ -153,7 +118,7 @@ form.addEventListener('submit', e=>{
     e.preventDefault()
     console.log('Hello')
     Email.send({
-        SecureToken : "9446752d-01a0-4ff0-8907-5701c5650570",
+        SecureToken : "2cd4383c-fe29-45ba-9e9b-2fc1de44a17b",
         To : 'abdoljega@gmail.com',
         From : email.value,
         Subject : fullName.value,
