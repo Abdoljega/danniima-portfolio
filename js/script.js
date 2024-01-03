@@ -1,4 +1,47 @@
 // import ScrollReveal from '../lib/scrollreveal-master/dist/scrollreveal.min'
+
+(function() {
+        // https://dashboard.emailjs.com/admin/account
+    emailjs.init('DfGJKaxpNyKpcObfg');
+    
+})();
+
+
+let form = document.querySelector('form')
+
+const CLIENT_ID = '628816302198-pb6atgbcm6hsq38m7cq8mua9v8c6clo5.apps.googleusercontent.com';
+const API_KEY = 'AIzaSyD6M3OFfxSGJbeV38cUwplPXVjDPU929WM';
+const TO_EMAIL = "abdoljega@gmail.com"
+
+form.addEventListener('submit', async e=>{
+    e.preventDefault()
+    console.log('Hello')
+
+    let sender_name = form.fullname.value
+    let from_email = form.email.value
+    let subject = form.subject.value
+    let message = form.message.value
+    console.log(fullName, email, subject, message)
+    
+    console.log(emailjs)
+    var serviceId = 'service_mhbqb9l'
+    var templateId = 'template_484ojwk'
+
+
+
+    emailjs.send(serviceId, templateId, {sender_name, from_email, subject, message})
+    .then(res=>{
+        alert('Successeful')
+    }).catch(err=>{
+        console.log(err)
+        alert(err)
+    })
+
+})
+
+
+
+
 let menusite = document.querySelector('.menu-site')
 
 
@@ -69,7 +112,6 @@ let observer = new IntersectionObserver((entries, appearScroll) =>{
 // PROJECT SCROLL ANIMATIONS
 
 let info = document.querySelectorAll('.fade')
-let projectImage = document.querySelectorAll('.destop-image-container')
 
 // projectImage.forEach(rightBox=>{
 //     observer.observe(rightBox)
@@ -78,7 +120,6 @@ let projectImage = document.querySelectorAll('.destop-image-container')
 info.forEach(leftBox=>{
     observer.observe(leftBox)
 })
-
 
 
 
@@ -112,25 +153,8 @@ let fullName = document.querySelector('#fullname')
 let email = document.querySelector('#email')
 let body = document.querySelector('#message')
 
-let form = document.querySelector('form')
-
-form.addEventListener('submit', e=>{
-    e.preventDefault()
-    console.log('Hello')
-    Email.send({
-        SecureToken : "2cd4383c-fe29-45ba-9e9b-2fc1de44a17b",
-        To : 'abdoljega01@yahoo.com',
-        From : email.value,
-        Subject : fullName.value,
-        Body : body.value
-    }).then(
-      message => alert(message)
-    );
-})
 
 
-
-// 9446752d-01a0-4ff0-8907-5701c5650570
 
 
 
