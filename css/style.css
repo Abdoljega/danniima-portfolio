@@ -1974,7 +1974,7 @@ footer .socialFooter {
     }
 
     .container .menu {
-        position: static;
+        position: fixed;
     }
 
     .menu .menu-logo-site {
@@ -2075,7 +2075,7 @@ footer .socialFooter {
 
 
     .container .menu .menu-site {
-        position: absolute;
+        position: fixed;
         right: 0;
         width: 0px;
         height: calc(100% - 59px);
@@ -2088,34 +2088,35 @@ footer .socialFooter {
         margin: 0;
     }
 
-    .container .menu .menu-site::after {
+    /* .container .menu .menu-site::after {
         content: '';
         position: absolute;
         width: 0vw;
         height: 100%;
-        /* background-color: #00000049; */
         left: 0;
         transition: 1s;
-    }
+    } */
 
     .container .menu .menu-site.active {
-        width: 50%;
+        width: 200px;
         transition: 1s;
         position: fixed;
         margin: 0;
         /* background-color: var(--primaryColor); */
         z-index: 100;
+        box-shadow: rgba(0, 0, 0, 0.15) -2.4px 2.4px 3.2px;
 
     }
 
-    .container .menu .menu-site.active::after {
+    /* .container .menu .menu-site.active::after {
         content: '';
         position: absolute;
-        width: 100vw;
+        width: 100%;
         height: 100%;
         background-color: #00000049;
         left: -100%;
-    }
+        z-index: -1;
+    } */
 
     .container .menu .menu-site .nav_menu {
         width: 100%;
@@ -2308,6 +2309,7 @@ footer .socialFooter {
         width: 100%;
         height: calc(100% - 60px);
         margin: auto;
+        margin-top: 58px;
         position: relative;
         padding: 0;
     }
