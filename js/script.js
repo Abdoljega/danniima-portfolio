@@ -29,13 +29,25 @@ form.addEventListener('submit', async e=>{
 
 
 
-    emailjs.send(serviceId, templateId, {sender_name, from_email, subject, message})
-    .then(res=>{
-        alert('Successeful')
-    }).catch(err=>{
-        console.log(err)
-        alert(err)
-    })
+    // emailjs.send(serviceId, templateId, {sender_name, from_email, subject, message})
+    // .then(res=>{
+    //     alert('Successeful')
+    // }).catch(err=>{
+    //     console.log(err)
+    //     alert(err)
+    // })
+
+    //  6f423921-1ade-4f14-9199-3c01cc2e190e
+
+    Email.send({
+        SecureToken : "6f423921-1ade-4f14-9199-3c01cc2e190e",
+        To : 'abdoljega@gmail.com',
+        From : from_email,
+        Subject : subject,
+        Body : message
+    }).then(
+      message => alert(message)
+    );
 
 })
 
