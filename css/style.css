@@ -2211,13 +2211,13 @@ footer .socialFooter {
         /* background-color: red; */
     }
 
-    .menu-site .nav_menu.modeContainer .pl-0 {
+    .menu-site .nav_menu.show .pl-0 {
         position: absolute;
         display: block;
         width: 20px;
         right: 30px;
-        top: 50%;
-        transform: translateY(-50%);
+        /* top: 50%;
+        transform: translateY(-50%); */
     }
 
 
@@ -2441,6 +2441,7 @@ footer .socialFooter {
         height: auto;
         position: relative;
         padding: 0;
+        padding-top: 50px;
     }
 
 
@@ -2524,7 +2525,7 @@ footer .socialFooter {
 
     .container .section-skills {
         position: static;
-        padding-top: 20px;
+        padding-top: 50px;
     }
 
     .section-skills .skills-container {
