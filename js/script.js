@@ -1,10 +1,6 @@
 // import ScrollReveal from '../lib/scrollreveal-master/dist/scrollreveal.min'
 
-(function() {
-        // https://dashboard.emailjs.com/admin/account
-    emailjs.init('DfGJKaxpNyKpcObfg');
-    
-})();
+
 
 
 let form = document.querySelector('form')
@@ -27,18 +23,6 @@ form.addEventListener('submit', async e=>{
     var serviceId = 'service_mhbqb9l'
     var templateId = 'template_484ojwk'
 
-
-
-    // emailjs.send(serviceId, templateId, {sender_name, from_email, subject, message})
-    // .then(res=>{
-    //     alert('Successeful')
-    // }).catch(err=>{
-    //     console.log(err)
-    //     alert(err)
-    // })
-
-    //  6f423921-1ade-4f14-9199-3c01cc2e190e
-
     Email.send({
         SecureToken : "6f423921-1ade-4f14-9199-3c01cc2e190e",
         To : 'abdoljega@gmail.com',
@@ -57,40 +41,6 @@ form.addEventListener('submit', async e=>{
 let menusite = document.querySelector('.menu-site')
 
 
-const sr = ScrollReveal({
-    origin: 'top',
-    distance: '80px',
-    duration: 2000,
-    reset: true
-})
-
-if(window.innerWidth > '780'){
-    sr.reveal('.nav_menu', {interval : 200})
-    
-    sr.reveal('.imgProfile', {delay : 200})
-    
-}
-sr.reveal('#nav_welcome', {delay : 1000})
-sr.reveal('#nav_name', {delay : 700})
-sr.reveal('.hi', {delay : 800})
-sr.reveal('.summery', {delay : 400})
-sr.reveal('.downloadCv', {delay : 200})
-// sr.reveal('.about-profile', {delay : 200})
-// sr.reveal('.projectInformation', {interval : 400})
-
-
-
-// const srl = ScrollReveal({
-//     origin: 'top',
-//     distance: '100px',
-//     duration: 2000,
-//     reset: true
-// })
-
-// srl.reveal('.destop-image-container', {delay : 500})
-
-
-
 let container = document.querySelector('.container')
 let social = document.querySelector('.social')
 // let aboutRight = document.querySelector('.about-right')
@@ -100,16 +50,12 @@ let leftSocial = document.querySelector('.socialLeft')
 let aboutProfile = document.querySelector('.about-profile')
 let textarea = document.querySelector('textarea')
 let projects = document.querySelectorAll('.projects')
+let menus = document.querySelectorAll('.hidden')
 let skills = document.querySelectorAll('.skill, input')
 // let h3 = document.querySelector('.hi')
 const { scrollTop } = document.documentElement
 
 
-
-        
-    
-
-// })
 
 
 let observer = new IntersectionObserver((entries, appearScroll) =>{
@@ -121,26 +67,34 @@ let observer = new IntersectionObserver((entries, appearScroll) =>{
     })
 }, {threshold: .3})
 
+let removeObserver = new IntersectionObserver((entries, appearScroll) =>{
+    entries.forEach(entry =>{
+        if(entry.isIntersecting){
+            entry.target.classList.remove('hidden')
+
+        } 
+    })
+}, {threshold: .3})
 // PROJECT SCROLL ANIMATIONS
 
 let info = document.querySelectorAll('.fade')
 
-// projectImage.forEach(rightBox=>{
-//     observer.observe(rightBox)
-// })
 
 info.forEach(leftBox=>{
     observer.observe(leftBox)
 })
 
-
+menus.forEach( menu => {
+    // removeObserver.observe(menu)
+    menu.classList.remove('hidden')
+})
 
 
 
 
 let toggle = document.querySelector('.toggle')
 let menuA = document.querySelector('.menu')
-let nav_menu = document.querySelectorAll('.nav_menu')
+let nav_menu = document.querySelectorAll('.nav_mn')
 let toggleCon = document.querySelector('.toggle-container')
 
 toggleCon.addEventListener('click', e=>{
@@ -237,3 +191,37 @@ document.addEventListener('click', e=>{
         })
     }
 })
+
+
+
+
+// SECTION SIDE
+let classList = ['wrapper', 'section-about', 'section-skills', 'section-qualification', 'section-projects', 'section-contact']
+let sectionObserver = new IntersectionObserver((obs)=>{
+    obs.forEach((sec)=>{
+        if(sec.isIntersecting){
+            console.log(classList.indexOf(sec.target.classList[0]))
+            nav_menu.forEach(nav=>{
+                nav.classList.remove('active')
+            })
+            let index = classList.indexOf(sec.target.classList[0])
+            
+            nav_menu[index].classList.add('active')
+        }
+    })
+}, {threshold: 0.2})
+
+let sections = document.querySelectorAll('.section')
+
+sections.forEach((section, index)=>{
+    sectionObserver.observe(section)
+
+})
+
+
+
+
+
+
+
+

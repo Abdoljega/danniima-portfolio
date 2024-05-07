@@ -10,6 +10,7 @@
     --duration: 0.5s;
     --toggle: #000;
     --edulist: #ffffff;
+    --openColor: #e6dada;
 
 
     /* TextSize */
@@ -29,6 +30,7 @@
     --surface: #1d1111;
     --toggle: white;
     --edulist: #1d1b1b;
+    --openColor: #1f0303;
 }
 
 :root {
@@ -40,10 +42,6 @@
     src: url(../font/roboto/roboto-Regular.ttf);
 }
 
-/* @font-face {
-    font-family: 'roboto';
-    src: url(../font/Poppins/Poppins-ExtraLight.ttf);
-} */
 @font-face {
     font-family: welcome;
     src: url(../font/Poppins/Poppins-Regular.ttf);
@@ -118,31 +116,31 @@ main {
 }
 
 main .animation-container {
-    width: 0;
-    height: 100%;
-    background-color: rgb(211, 201, 201);
+    width: 100%;
+    height: 0%;
+    background-color: var(--openColor);
     position: absolute;
     z-index: 100;
     animation: welcome 3s linear;
-    right: 0;
-    display: none;
+    /* right: 0; */
+    /* display: none; */
 }
 
 @keyframes welcome {
     0% {
-        width: 100%;
+        height: 100%;
     }
 
     30% {
-        width: 100%;
+        height: 100%;
     }
 
     70% {
-        width: 20%;
+        height: 20%;
     }
 
     100% {
-        width: 0%;
+        height: 0%;
     }
 }
 
@@ -202,18 +200,51 @@ main .menu .toggle-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 10px;
 }
 .menu .menu-site .nav_menu {
-    width: 80px;
-    /* background-color: cadetblue; */
-    margin-left: 15px;
+    width: fit-content;
+    margin: 0 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    visibility: hidden;
+    /* animation: menu-animetad 1s ; */
+    /* animation-delay: 4s; */
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s;
+    /* visibility: hidden; */
 }
 
-.menu-site .nav_menu p {
+/* git commit -m "04-dec-2023 10:02 commit" */
+.menu .menu-site a:nth-child(1) .nav_menu{
+    transition-delay: 3000ms;
+}
+
+.menu .menu-site a:nth-child(2) .nav_menu {
+    transition-delay: 3200ms;
+}
+.menu .menu-site a:nth-child(3) .nav_menu {
+    transition-delay: 3400ms;
+}
+.menu .menu-site a:nth-child(4) .nav_menu {
+    transition-delay: 3600ms;
+}
+.menu .menu-site a:nth-child(5) .nav_menu{
+    transition-delay: 3800ms;
+}
+.menu .menu-site a:nth-child(6) .nav_menu {
+    transition-delay: 4000ms;
+}
+.menu .menu-site .nav_menu:nth-child(7) {
+    transition-delay: 4200ms;
+}
+.menu .menu-site .nav_menu.hidden {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+.menu-site a .nav_menu p {
     text-align: center;
     color: var(--secondryColor);
     font-size: 16px;
@@ -231,7 +262,7 @@ main .menu .toggle-container {
     display: none;
 }
 
-.nav_menu.active p {
+.menu-site a.active .nav_menu p {
     color: var(--primary);
     border-bottom: 2px solid var(--primary);
 }
@@ -286,17 +317,39 @@ main .menu .toggle-container {
 .profile-img .imgProfile {
     width: 300px;
     height: 420px;
-    visibility: hidden;
+    /* visibility: hidden; */
     display: block;
     background-color: var(--surface);
     margin-top: 0px;
     border-radius: 5px;
-    /* border-top-left-radius: 50%;
-    border-top-right-radius: 50%; */
-    /* border-radius: 110px; */
-    /* border: 1px solid var(--primary); */
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.16);
+    /* opacity: 1; */
+    transform: none;
     position: relative;
+    opacity: 1;
+    transform: translateY(0px);
+    transition: 1s;
+    transition-delay: 4s;
+    
+    
+    /* animation-delay: 4s; */
+}
+
+.profile-img .imgProfile.hidden {
+    opacity: 0;
+    transform: translateY(-40px);
+}
+
+@keyframes fadeImage {
+    0%{
+        opacity: 0;
+        transform: translateY(-70px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 .profile-img .imgProfile img {
@@ -328,7 +381,7 @@ main .menu .toggle-container {
     /* background-color: rgb(44, 21, 66); */
     /* border-left: 3px solid var(--primary); */
     position: relative;
-    visibility: hidden;
+    /* visibility: hidden; */
 
 }
 
@@ -341,10 +394,16 @@ main .menu .toggle-container {
     top: 50%;
     transform: translateY(-50%);
     background-color: var(--primary);
-    animation: centerLine 4s linear;
+    /* animation: centerLine 4s linear;
+    animation-delay: 3s; */
+    transition: height 3s;
+    transition-delay: 4s;
     visibility: visible;
 }
 
+.binner-container .binner-text.hidden::after {
+    height: 0;
+}
 @keyframes centerLine {
     0% {
         height: 0%;
@@ -364,18 +423,47 @@ main .menu .toggle-container {
     font-size: 25px;
     font-family: headName;
     color: var(--secondryColor);
-    visibility: hidden;
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s;
+    transition-delay: 4400ms;
+    
+    /* visibility: hidden; */
 }
 
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
 
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.binner-text h3.hidden {
+    opacity: 0;
+    transform: translateY(-30px);
+    
+}
 .binner-text h1 {
     padding: 5px 0;
     font-size: 50px;
     font-family: headName;
     color: var(--secondryColor);
-    visibility: hidden;
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s;
+    transition-delay: 4400ms;
+    /* visibility: hidden; */
 }
 
+.binner-text h1.hidden {
+    opacity: 0;
+    transform: translateY(-30px);
+}
 .binner-text h1 big {
     font-size: 50px;
     color: var(--primary);
@@ -386,10 +474,18 @@ main .menu .toggle-container {
     font-family: 'roboto', sans-serif;
     font-weight: 400;
     color: var(--secondryColor);
-    visibility: hidden;
+    /* visibility: hidden; */
     line-height: 25px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s;
+    transition-delay: 4400ms;
 }
 
+.binner-text p.hidden {
+    opacity: 0;
+    transform: translateY(-30px);
+}
 
 
 .binner-text .downloads {
@@ -399,7 +495,16 @@ main .menu .toggle-container {
     position: absolute;
     bottom: -100px;
     left: 40%;
-    transform: translateX(-50%);
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    transition: 1s;
+    transition-delay: 4500ms;
+    
+}
+
+.binner-text .downloads.hidden {
+    opacity: 0;
+    transform: translateY(-100px) translateX(-50%);
 }
 
 .downloads .downloadCv {
@@ -409,7 +514,7 @@ main .menu .toggle-container {
     justify-content: center;
     align-items: center;
     /* background-color: var(--primary); */
-    visibility: hidden;
+    /* visibility: hidden; */
     border: 2px solid var(--primary);
     border-radius: 7px;
 }
@@ -487,7 +592,7 @@ main .menu .toggle-container {
     position: static;
     transform: translateY(-100px);
     opacity: 0;
-    visibility: hidden;
+    /* visibility: hidden; */
 
 }
 
@@ -2118,8 +2223,8 @@ footer .socialFooter {
         z-index: -1;
     } */
 
-    .container .menu .menu-site .nav_menu {
-        width: 100%;
+    .container .menu .menu-site a {
+        width: fit-content;
         height: 60px;
         visibility: hidden;
         margin: 0;
@@ -2131,7 +2236,7 @@ footer .socialFooter {
         justify-content: flex-start;
     }
 
-    .container .menu .menu-site .nav_menu.show {
+    .container .menu .menu-site a.show {
         opacity: 1;
         visibility: visible;
         transform: translateX(0px);
@@ -2139,35 +2244,35 @@ footer .socialFooter {
 
     }
 
-    .menu-site .nav_menu:nth-child(1).show {
+    .menu-site a:nth-child(1).show {
         /* animation-delay: 200ms; */
         transition: 1s;
         transition-delay: 0ms;
 
     }
 
-    .menu-site .nav_menu:nth-child(2).show {
+    .menu-site a:nth-child(2).show {
         transition: 1s;
         transition-delay: 100ms;
     }
 
-    .menu-site .nav_menu:nth-child(3).show {
+    .menu-site a:nth-child(3).show {
         transition: 1s;
 
         transition-delay: 200ms;
     }
 
-    .menu-site .nav_menu:nth-child(4).show {
+    .menu-site a:nth-child(4).show {
         transition: 1s;
         transition-delay: 300ms;
     }
 
-    .menu-site .nav_menu:nth-child(5).show {
+    .menu-site a:nth-child(5).show {
         transition: 1s;
         transition-delay: 400ms;
     }
 
-    .menu-site .nav_menu:nth-child(6).show {
+    .menu-site a:nth-child(6).show {
         transition: 1s;
         transition-delay: 500ms;
     }
@@ -2176,45 +2281,64 @@ footer .socialFooter {
         transition: 1s;
         transition-delay: 600ms;
     }
-    .menu-site .nav_menu a,
-    .menu-site .nav_menu.modeContainer p {
-        width: 80px;
+
+    
+    .menu-site .nav_menu,
+    .menu-site .nav_mn.modeContainer p {
+        width: fit-content;
         display: flex;
         justify-content: center;
         align-items: center;
         position: static;
         color: var(--secondryColor);
+        font-family: fontF;
         /* background-color: red; */
     }
 
-    .menu-site .nav_menu a p {
+        
+    .menu-site .nav_menu p {
         color: var(--secondryColor);
         float: left;
     }
 
-    .menu-site .nav_menu svg {
+    .menu-site .nav_mn svg {
         display: none;
     }
-
-    .nav_menu.modeContainer.active p {
+    
+    .nav_mn.modeContainer.active p {
+        float: left;
         color: var(--secondryColor);
         border-bottom: none;
     }
 
-    .nav_menu.modeContainer:hover p {
+    .nav_mn.modeContainer:hover p {
         color: var(--secondryColor);
         border-bottom: 0px solid transparent;
     }
 
-    .menu-site .nav_menu.modeContainer {
+    .menu-site .nav_mn.modeContainer {
+        width: 100%;
+        height: 50px;
         position: relative;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 12px;
+        visibility: hidden;
+        transform: translateX(80px);
+        transition: 1s;
+        opacity: 0;
         /* background-color: red; */
     }
 
-    .menu-site .nav_menu.show .pl-0 {
+    .menu-site .nav_mn.modeContainer.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0px);
+    }
+    .menu-site .nav_mn.show .pl-0 {
         position: absolute;
         display: block;
-        width: 20px;
+        width: 35px;
         right: 30px;
         /* top: 50%;
         transform: translateY(-50%); */
@@ -2390,7 +2514,7 @@ footer .socialFooter {
         font-family: headName;
         line-height: 45px;
         text-align: center;
-        visibility: hidden;
+        /* visibility: hidden; */
     }
 
     .binner-text h1 big {
@@ -2403,7 +2527,7 @@ footer .socialFooter {
         width: 100%;
         text-align: center;
         /* color: black; */
-        visibility: hidden;
+        /* visibility: hidden; */
     }
 
     .binner-text .downloads {
